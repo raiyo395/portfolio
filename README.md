@@ -1,32 +1,59 @@
-# Portfolio
+# Aric Raiyo | Web3 Frontend Developer
 
-Personal portfolio site showcasing my frontend development work, with a focus on 
-e-commerce interfaces and Web3 dApps.
+Personal portfolio showcasing live, deployed projects across Web3 dApps and 
+e-commerce storefronts — wallet connect flows, on-chain dashboards, and DeFi 
+front ends, built with React, TypeScript, and Tailwind CSS.
+
+🔗 **Live site:** https://raiyo395.github.io/portfolio/
 
 ## About
 
-I'm a self-taught frontend developer building production-quality storefronts and 
-wallet-connected decentralized applications. My work spans clean, responsive 
-e-commerce UIs (cart logic, checkout flows) to blockchain-integrated dashboards 
-using React, TypeScript, and modern Web3 tooling (wagmi, viem).
+Self-taught developer who learns by shipping — every project here is a real, 
+working build, deployed from scratch, not a tutorial clone. Started with 
+e-commerce cart and checkout logic, which is where the focus on clean state 
+and zero-confusion UX began, and carried that into wallet-connected, on-chain 
+interfaces.
 
 ## Featured Projects
 
-- **Nexus DeFi Dashboard** — Multi-chain portfolio viewer with live wallet 
-  balances, token allocation breakdown, and send-transaction support. 
-  Built with React, TypeScript, wagmi + viem on Sepolia testnet.
-- **Lumière** — Skincare e-commerce storefront with responsive product 
-  browsing and cart flow.
-- **Vantik** — E-commerce platform layout focused on clean checkout UX.
+### Nexus DeFi Dashboard — *Flagship, Web3*
+Connect a wallet, check live balances, send transactions — no card forms, no 
+accounts, just a wallet and a signature. Runs on Sepolia testnet, built to 
+handle real-world edge cases: pending states, rejected signatures, and 
+multiple wallet providers.
+
+`React` `TypeScript` `wagmi / viem` `Tailwind CSS` `Sepolia Testnet`
+
+### Vantik Storefront — *Foundation Build*
+A dark-themed e-commerce store with real-time cart state and no page reloads — 
+the project where the state-management habits behind Nexus's wallet/balance 
+UI were built.
+
+`Tailwind CSS` `JavaScript ES6` `localStorage`
+
+### Lumière Skincare — *Foundation Build*
+First full storefront build — cart and payment summary logic tested end to 
+end, before any of it touched a wallet or a chain.
+
+`Semantic HTML5` `CSS Architecture` `Vanilla JavaScript`
 
 ## Tech Stack
 
-React · TypeScript · Tailwind CSS · Vite · wagmi · viem
+React · TypeScript · wagmi / viem · Tailwind CSS · JavaScript (ES6) · Vite · 
+Git & GitHub
 
-## Get in Touch
+## Available For
 
-Open for freelance work. Reach out via [X/socials link].
+Independent frontend contracts for Web3 products — wallet connection flows, 
+on-chain dashboards, DeFi front ends. Offering a free 10-minute Web3 UX audit 
+for anyone with an existing wallet or on-chain flow.
 
-## Live Site
+## Contact
 
-[https://raiyo395.github.io/portfolio/](https://raiyo395.github.io/portfolio/)
+📧 [aricraiyovext@gmail.com](mailto:aricraiyovext@gmail.com)  
+💬 Telegram: [@AricRaiyo](https://t.me/AricRaiyo)  
+🐦 X: [@raiyodev39cs](https://x.com/raiyodev39cs)  
+💻 GitHub: [@raiyo395](https://github.com/raiyo395)
+
+---
+© 2026 Aric Raiyo. All rights reserved.
