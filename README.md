@@ -39,8 +39,7 @@ end, before any of it touched a wallet or a chain.
 
 ## Tech Stack
 
-React · TypeScript · wagmi / viem · Tailwind CSS · JavaScript (ES6) · Vite · 
-Git & GitHub
+React · TypeScript · wagmi / viem · Tailwind CSS · JavaScript (ES6)
 
 ## Available For
 
