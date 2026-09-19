@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aric Raiyo | Web3 Frontend Developer</title>
-    <meta name="description" content="Frontend developer building Web3 interfaces — wallet connections, on-chain dashboards, DeFi front ends — with React, TypeScript, and Tailwind CSS.">
+    <meta name="description" content="Frontend developer building wallet, balance, and transaction interfaces for Web3 apps with React, TypeScript, wagmi, viem, and Tailwind CSS.">
+    <meta name="theme-color" content="#0b0f19">
+    <link rel="canonical" href="https://raiyo395.github.io/portfolio/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Aric Raiyo | Web3 Frontend Developer">
-    <meta property="og:description" content="Building Web3 interfaces that make wallets, balances, and on-chain actions feel simple. Deployed builds with React, TypeScript, and Tailwind CSS.">
+    <meta property="og:description" content="Wallet, balance, and transaction interfaces for Web3 apps. Main project: Nexus, a wallet dashboard on Sepolia testnet.">
     <meta property="og:url" content="https://raiyo395.github.io/portfolio/">
     <meta property="og:image" content="https://raiyo395.github.io/portfolio/images/nexus-hero.png">
 
@@ -17,7 +19,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@raiyodev39cs">
     <meta name="twitter:title" content="Aric Raiyo | Web3 Frontend Developer">
-    <meta name="twitter:description" content="Building Web3 interfaces that make wallets, balances, and on-chain actions feel simple.">
+    <meta name="twitter:description" content="Wallet, balance, and transaction interfaces for Web3 apps. Main project: Nexus, a wallet dashboard on Sepolia testnet.">
     <meta name="twitter:image" content="https://raiyo395.github.io/portfolio/images/nexus-hero.png">
 
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b0f19'/%3E%3Ctext x='50' y='68' font-size='58' font-family='sans-serif' font-weight='800' fill='%23a78bfa' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
@@ -25,305 +27,470 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; }
-        .glow { box-shadow: 0 0 60px -15px rgba(167,139,250,0.3); }
-        .glow-cyan { box-shadow: 0 0 60px -15px rgba(34,211,238,0.2); }
+        /* ---------- Tokens ---------- */
+        :root {
+            --bg: #0b0f19;
+            --surface: #111827;
+            --surface-2: #0f172a;
+            --line: #1f2937;
+            --line-strong: #374151;
+            --text: #e5e7eb;
+            --muted: #9ca3af;
+            --accent: #a78bfa;
+            --accent-hover: #c4b5fd;
+            --ok: #34d399;
+
+            --radius-card: 12px;
+            --radius-control: 8px;
+            --radius-tag: 6px;
+
+            --font: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        }
+
+        /* ---------- Base ---------- */
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-padding-top: 5rem; -webkit-text-size-adjust: 100%; }
+        @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font);
+            font-size: 1rem;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::selection { background: var(--accent); color: var(--bg); }
+
+        h1, h2, h3 { margin: 0; color: #fff; line-height: 1.2; letter-spacing: -0.02em; }
+        p { margin: 0; }
+        ul, ol { margin: 0; padding: 0; }
+        img { display: block; max-width: 100%; }
+
+        a { color: var(--accent); text-underline-offset: 3px; }
+        a:hover { color: var(--accent-hover); }
+
+        a:focus-visible, .btn:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        .sr-only {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+        }
+        .skip-link {
+            position: absolute; left: 1rem; top: -4rem; z-index: 100;
+            background: var(--accent); color: var(--bg); padding: .6rem 1rem;
+            border-radius: var(--radius-control); font-weight: 600; text-decoration: none;
+        }
+        .skip-link:focus { top: 1rem; color: var(--bg); }
+
+        .wrap { max-width: 64rem; margin: 0 auto; padding: 0 1.25rem; }
+        @media (min-width: 640px) { .wrap { padding: 0 1.5rem; } }
+
+        .section { padding-block: 4rem; border-top: 1px solid var(--line); }
+        @media (min-width: 768px) { .section { padding-block: 5rem; } }
+        .section-head { display: grid; gap: .5rem; margin-bottom: 2rem; }
+        .section-head h2 { font-size: 1.75rem; }
+        .section-head p { color: var(--muted); max-width: 60ch; }
+
+        /* ---------- Buttons ---------- */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+            min-height: 44px; padding: .65rem 1.1rem;
+            border: 1px solid transparent; border-radius: var(--radius-control);
+            font: 600 .9rem/1.2 var(--font); text-decoration: none; text-align: center;
+            cursor: pointer;
+        }
+        .btn-primary { background: var(--accent); color: var(--bg); }
+        .btn-primary:hover { background: var(--accent-hover); color: var(--bg); }
+        .btn-secondary { border-color: var(--line-strong); color: var(--text); background: transparent; }
+        .btn-secondary:hover { background: var(--surface); color: #fff; border-color: var(--muted); }
+        @media (prefers-reduced-motion: no-preference) {
+            .btn { transition: background-color .15s ease, border-color .15s ease, color .15s ease; }
+        }
+        .btn svg { width: 1rem; height: 1rem; flex: none; }
+
+        /* ---------- Header ---------- */
+        .site-header {
+            position: sticky; top: 0; z-index: 50;
+            background: rgba(11, 15, 25, .92);
+            -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--line);
+        }
+        .site-header .wrap { height: 4rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+        .brand { color: #fff; font-weight: 800; font-size: 1.15rem; letter-spacing: -0.02em; text-decoration: none; }
+        .brand span { color: var(--accent); }
+        .brand:hover { color: #fff; }
+        .nav { display: flex; align-items: center; gap: 1.5rem; }
+        .nav-links { display: none; gap: 1.5rem; list-style: none; }
+        .nav-links a { color: var(--muted); font-size: .9rem; font-weight: 500; text-decoration: none; }
+        .nav-links a:hover { color: #fff; }
+        @media (min-width: 640px) { .nav-links { display: flex; } }
+        .site-header .btn { min-height: 40px; padding: .5rem .9rem; font-size: .85rem; }
+
+        /* ---------- Hero ---------- */
+        .hero { padding-block: 3.5rem 4rem; }
+        @media (min-width: 768px) { .hero { padding-block: 5.5rem 5rem; } }
+        .status {
+            display: inline-flex; align-items: center; gap: .5rem;
+            font-size: .875rem; font-weight: 600; color: var(--ok);
+            margin-bottom: 1.25rem;
+        }
+        .status .dot { width: .5rem; height: .5rem; border-radius: 50%; background: var(--ok); }
+        .hero h1 { font-size: clamp(2rem, 5.5vw, 3.4rem); font-weight: 800; max-width: 20ch; }
+        .hero .lead { margin-top: 1.5rem; max-width: 62ch; color: var(--muted); font-size: 1.1rem; }
+        .hero-actions { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .75rem; }
+        .hero-tools { margin-top: 2.5rem; max-width: 62ch; font-size: .9rem; color: var(--muted); }
+        .hero-tools strong { color: var(--text); font-weight: 600; }
+
+        /* ---------- Case study ---------- */
+        .case { background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius-card); overflow: hidden; }
+        .case-shot { display: block; background: var(--surface-2); border-bottom: 1px solid var(--line); }
+        .case-shot img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+        @media (min-width: 768px) { .case-shot img { aspect-ratio: 16 / 8; } }
+        .case-body { padding: 1.5rem; display: grid; gap: 1.25rem; }
+        @media (min-width: 768px) { .case-body { padding: 2rem; } }
+        .badge {
+            display: inline-block; width: fit-content;
+            font-size: .8rem; font-weight: 600; color: var(--accent);
+            border: 1px solid rgba(167, 139, 250, .4); border-radius: var(--radius-tag);
+            padding: .2rem .55rem;
+        }
+        .case h3 { font-size: 1.6rem; }
+        .case .lede { color: var(--muted); max-width: 62ch; }
+        .case-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+        .case-note { font-size: .85rem; color: var(--muted); max-width: 62ch; }
+
+        .facts { margin: .5rem 0 0; }
+        .facts > div { padding: 1.1rem 0; border-top: 1px solid var(--line); }
+        .facts dt { color: var(--muted); font-size: .875rem; font-weight: 600; margin-bottom: .35rem; }
+        .facts dd { margin: 0; max-width: 62ch; }
+        .facts ul { padding-left: 1.1rem; display: grid; gap: .3rem; }
+        @media (min-width: 768px) {
+            .facts > div { display: grid; grid-template-columns: 9.5rem 1fr; gap: 1.5rem; }
+            .facts dt { margin-bottom: 0; padding-top: .1rem; }
+        }
+
+        /* ---------- Supporting projects ---------- */
+        .subhead { font-size: 1.15rem; margin: 3rem 0 .4rem; }
+        .subhead + p { color: var(--muted); margin-bottom: 1.5rem; max-width: 60ch; }
+        .cards { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
+        @media (min-width: 768px) { .cards { grid-template-columns: 1fr 1fr; } }
+        .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-card); overflow: hidden; display: flex; flex-direction: column; }
+        .card .thumb { display: block; border-bottom: 1px solid var(--line); background: var(--surface-2); }
+        .card .thumb img { width: 100%; height: 12rem; object-fit: cover; object-position: top; }
+        .card-body { padding: 1.25rem 1.5rem 1.5rem; display: grid; gap: .75rem; flex: 1; align-content: start; }
+        .card h4 { margin: 0; font-size: 1.15rem; color: #fff; letter-spacing: -0.01em; }
+        .card p { color: var(--muted); font-size: .95rem; }
+        .tags { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; padding: 0; }
+        .tags li { font-family: var(--mono); font-size: .75rem; color: var(--text); background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--radius-tag); padding: .15rem .5rem; }
+        .card-foot { padding: 0 1.5rem 1.5rem; }
+        .card-foot .btn { width: 100%; }
+
+        /* ---------- Process ---------- */
+        .steps { list-style: none; counter-reset: step; display: grid; gap: 1rem; }
+        @media (min-width: 768px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+        .steps li { counter-increment: step; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-card); padding: 1.5rem; }
+        .steps li::before { content: counter(step); display: block; font-weight: 800; font-size: 1.5rem; color: var(--accent); margin-bottom: .5rem; }
+        .steps h3 { font-size: 1.05rem; margin-bottom: .5rem; }
+        .steps p { color: var(--muted); font-size: .95rem; }
+        .terms { margin-top: 1.5rem; color: var(--muted); font-size: .95rem; max-width: 62ch; }
+
+        /* ---------- About / fit ---------- */
+        .about p { max-width: 62ch; color: var(--muted); }
+        .about p + p { margin-top: 1rem; }
+        .fit { display: grid; gap: 1.5rem; margin-top: 2rem; }
+        @media (min-width: 768px) { .fit { grid-template-columns: 1fr 1fr; } }
+        .fit h3 { font-size: 1.05rem; margin-bottom: .75rem; }
+        .fit ul { padding-left: 1.1rem; display: grid; gap: .4rem; color: var(--muted); }
+
+        /* ---------- Contact ---------- */
+        .contact-links { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
+        .contact-mail { margin-top: 1.25rem; color: var(--muted); }
+
+        .site-footer { border-top: 1px solid var(--line); padding-block: 2rem; color: var(--muted); font-size: .875rem; }
     </style>
 </head>
-<body class="text-gray-100 antialiased selection:bg-violet-500 selection:text-slate-900">
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Header -->
-    <header class="border-b border-gray-800 bg-[#0f172a]/80 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-            <div class="text-xl font-bold tracking-tight text-white">
-                Aric Raiyo<span class="text-violet-400">.dev</span>
-            </div>
-            <div class="flex items-center gap-3">
-                <div class="hidden sm:flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/30 px-3 py-1 rounded-full">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Available for Work</span>
-                </div>
-                <a href="mailto:aricraiyovext@gmail.com?subject=Free%20Web3%20UX%20Audit%20Request"
-                   class="text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2 rounded-lg bg-violet-500 text-slate-900 hover:bg-violet-400 transition-all">
-                    Free Audit
-                </a>
-            </div>
-        </div>
-    </header>
+<!-- Header -->
+<header class="site-header">
+    <div class="wrap">
+        <a class="brand" href="#top" aria-label="Aric Raiyo, back to top">Aric Raiyo<span>.dev</span></a>
+        <nav class="nav" aria-label="Primary">
+            <ul class="nav-links">
+                <li><a href="#work">Work</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a class="btn btn-primary" href="mailto:aricraiyovext@gmail.com?subject=Free%20Web3%20UX%20Review%20Request">Free UX review</a>
+        </nav>
+    </div>
+</header>
 
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-12 space-y-28">
+<main id="main">
 
-        <!-- Hero -->
-        <section class="text-center max-w-3xl mx-auto space-y-6 pt-4">
-            <p class="text-violet-400 text-sm font-semibold uppercase tracking-widest">Web3 Frontend Developer</p>
-            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-                Making <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-500">wallets, balances, and on-chain actions</span> feel simple
-            </h1>
-            <p class="text-lg text-gray-400 leading-relaxed">
-                Frontend developer building Web3 interfaces — wallet connect flows, on-chain data flows, transaction UX — with React, TypeScript, and Tailwind CSS. Background in e-commerce cart and checkout logic, which is where the obsession with clean state and zero-confusion UX started.
+    <!-- Hero -->
+    <section class="hero" id="top">
+        <div class="wrap">
+            <p class="status"><span class="dot" aria-hidden="true"></span>Open to freelance work</p>
+            <h1>Wallet and transaction screens that tell users what is happening</h1>
+            <p class="lead">
+                I'm Aric Raiyo, a frontend developer working in React, TypeScript, wagmi, and viem.
+                My main proof of work is Nexus, a wallet dashboard running on the Sepolia testnet.
+                I'm early in my career, so I start with a free review of your wallet flow and quote fixed-scope work up front.
             </p>
-            <div class="pt-4 flex flex-wrap justify-center gap-4 text-xs font-medium tracking-wide uppercase">
-                <span class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-md border border-gray-700">🪙 Wallet Connect</span>
-                <span class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-md border border-gray-700">⛓️ On-Chain Data</span>
-                <span class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-md border border-gray-700">📱 Mobile Responsive</span>
-                <span class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-md border border-gray-700">⚡ Fast Loading</span>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="#nexus">View the Nexus case study</a>
+                <a class="btn btn-secondary" href="mailto:aricraiyovext@gmail.com?subject=Free%20Web3%20UX%20Review%20Request">Request a free review</a>
+            </div>
+            <p class="hero-tools">
+                <strong>Tools:</strong> React, TypeScript, wagmi, viem, Tailwind CSS, Vite, Git and GitHub.
+                Plain JavaScript for the storefronts below.
+            </p>
+        </div>
+    </section>
+
+    <!-- Work -->
+    <section class="section" id="work">
+        <div class="wrap">
+            <div class="section-head">
+                <h2>Work</h2>
+                <p>Three deployed projects: one Web3 dashboard on testnet and two demo storefronts. Each links to a live site you can open.</p>
             </div>
 
-            <div class="pt-4 flex flex-wrap justify-center gap-3">
-                <a href="mailto:aricraiyovext@gmail.com?subject=Free%20Web3%20UX%20Audit%20Request"
-                   class="inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-semibold bg-violet-500 text-slate-900 hover:bg-violet-400 transition-all shadow-lg shadow-violet-500/20">
-                    Get a free 10-min Web3 UX audit →
+            <!-- Nexus case study -->
+            <article class="case" id="nexus" aria-labelledby="nexus-title">
+                <a class="case-shot" href="https://nexus-chwr.vercel.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                    <img src="images/nexus-hero.png" alt="" loading="eager">
                 </a>
-                <a href="#projects"
-                   class="inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-semibold border border-gray-700 text-gray-300 hover:bg-gray-800 transition-all">
-                    See the work
-                </a>
-            </div>
-        </section>
 
-        <!-- Stats / trust bar -->
-        <section class="grid grid-cols-3 gap-4 sm:gap-8 border-y border-gray-800/60 py-8">
-            <div class="text-center">
-                <p class="text-2xl sm:text-3xl font-extrabold text-white">1</p>
-                <p class="text-xs text-gray-500 uppercase tracking-wide mt-1">Web3 dashboard on Sepolia</p>
-            </div>
-            <div class="text-center">
-                <p class="text-2xl sm:text-3xl font-extrabold text-white">3</p>
-                <p class="text-xs text-gray-500 uppercase tracking-wide mt-1">Live projects shipped total</p>
-            </div>
-            <div class="text-center">
-                <p class="text-2xl sm:text-3xl font-extrabold text-white">wagmi</p>
-                <p class="text-xs text-gray-500 uppercase tracking-wide mt-1">+ viem, Sepolia testnet</p>
-            </div>
-        </section>
+                <div class="case-body">
+                    <span class="badge">Main project · Sepolia testnet</span>
+                    <h3 id="nexus-title">Nexus: a wallet dashboard</h3>
+                    <p class="lede">
+                        Nexus connects to a browser wallet, reads the connected wallet's balance from the chain, and shows transaction states such as pending and rejected.
+                        It is a portfolio project, built to show how I handle wallet UI.
+                    </p>
 
-        <!-- Tech stack -->
-        <section class="space-y-4">
-            <p class="text-center sm:text-left text-xs font-semibold uppercase tracking-widest text-gray-500">Stack</p>
-            <div class="flex flex-wrap justify-center sm:justify-start gap-x-8 gap-y-3 text-sm font-semibold text-gray-400">
-                <span class="hover:text-violet-400 transition-colors">wagmi / viem</span>
-                <span class="hover:text-violet-400 transition-colors">React</span>
-                <span class="hover:text-violet-400 transition-colors">TypeScript</span>
-                <span class="hover:text-violet-400 transition-colors">Tailwind CSS</span>
-                <span class="hover:text-violet-400 transition-colors">JavaScript (ES6)</span>
-                <span class="hover:text-violet-400 transition-colors">Vite</span>
-                <span class="hover:text-violet-400 transition-colors">Git &amp; GitHub</span>
-            </div>
-        </section>
-
-        <!-- Projects -->
-        <section id="projects" class="space-y-8">
-            <div class="space-y-2 text-center sm:text-left">
-                <h2 class="text-2xl font-bold text-white tracking-tight">Projects</h2>
-                <p class="text-gray-400 text-sm">Deployed builds you can open and click through.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-                <!-- Nexus DeFi -->
-                <div class="bg-[#111827] border border-violet-500/40 rounded-xl overflow-hidden hover:border-violet-400/60 hover:glow transition-all duration-300 flex flex-col group md:col-span-2">
-
-                    <a href="https://nexus-chwr.vercel.app/" target="_blank" rel="noopener noreferrer" class="block bg-[#0f172a] border-b border-gray-800 relative">
-                        <img src="images/nexus-hero.png" alt="Nexus DeFi dashboard with a connected wallet balance and asset table" class="w-full h-96 object-cover object-top" loading="lazy">
-                        <span class="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-wider bg-slate-900/80 text-violet-400 px-2 py-1 rounded backdrop-blur-sm">Live Site</span>
-                    </a>
-
-                    <div class="p-6 space-y-4 flex-1">
-                        <div class="flex items-center justify-between flex-wrap gap-2">
-                            <span class="text-xs font-bold uppercase tracking-wider text-violet-400 bg-violet-400/10 px-2.5 py-1 rounded">Flagship — Web3</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white group-hover:text-violet-400 transition-colors">Nexus DeFi Dashboard</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">
-                            Connect a wallet and send transactions with just a signature, no card forms and no accounts. Built with wagmi and viem on Sepolia testnet, it reads the connected wallet's balance straight from the chain and handles pending transactions, rejected signatures, and multiple wallet providers.
-                        </p>
-
-                        <div class="flex flex-wrap gap-2 pt-2">
-                            <span class="text-[11px] font-mono bg-gray-800 text-gray-300 px-2 py-0.5 rounded">React</span>
-                            <span class="text-[11px] font-mono bg-gray-800 text-gray-300 px-2 py-0.5 rounded">TypeScript</span>
-                            <span class="text-[11px] font-mono bg-gray-800 text-gray-300 px-2 py-0.5 rounded">wagmi / viem</span>
-                            <span class="text-[11px] font-mono bg-gray-800 text-gray-300 px-2 py-0.5 rounded">Tailwind CSS</span>
-                            <span class="text-[11px] font-mono bg-gray-800 text-gray-300 px-2 py-0.5 rounded">Sepolia Testnet</span>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0 bg-[#0f172a]/50 border-t border-gray-800/60">
-                        <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="https://nexus-chwr.vercel.app/"
-                             target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex justify-center items-center px-4 py-2.5 rounded-lg text-sm font-semibold bg-violet-500 text-slate-900 hover:bg-violet-400 transition-all shadow-lg shadow-violet-500/10">
-                                View Live Site
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                            </a>
-                            <a href="https://github.com/raiyo395/nexus"
-                             target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex justify-center items-center px-4 py-2.5 rounded-lg text-sm font-semibold border border-gray-700 text-gray-300 hover:bg-gray-800 transition-all">
-                                View Code
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Vantik -->
-                <div class="bg-[#111827] border border-gray-800 rounded-xl overflow-hidden hover:border-cyan-500/50 hover:glow-cyan transition-all duration-300 flex flex-col group">
-
-                    <a href="https://raiyo395.github.io/vantic/" target="_blank" rel="noopener noreferrer" class="block bg-[#0f172a] border-b border-gray-800 relative">
-                        <img src="images/vantik-hero.png" alt="Vantik storefront homepage" class="w-full h-48 object-cover object-top" loading="lazy">
-                        <span class="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-wider bg-slate-900/80 text-cyan-400 px-2 py-1 rounded backdrop-blur-sm">Live Site</span>
-                    </a>
-
-                    <div class="p-6 space-y-4 flex-1">
-                        <span class="text-xs font-bold uppercase tracking-wider text-gray-400 bg-gray-500/10 px-2.5 py-1 rounded">Foundation Build</span>
-                        <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Vantik Storefront</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">
-                            A dark-themed e-commerce store with real-time cart state and no page reloads — the project where the state-management habits behind Nexus's wallet and balance UI were built.
-                        </p>
-
-                        <div class="flex flex-wrap gap-2 pt-2">
-                            <span class="text-[11px] font-mono bg-gray-800 text-gray-300 px-2 py-0.5 rounded">Tailwind CSS</span>
-                            <span class="text-[11px] font-mono bg-gray-800 text-gray-300 px-2 py-0.5 rounded">JavaScript ES6</span>
-                            <span class="text-[11px] font-mono bg-gray-800 text-gray-300 px-2 py-0.5 rounded">localStorage</span>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0 bg-[#0f172a]/50 border-t border-gray-800/60">
-                        <a href="https://raiyo395.github.io/vantic/"
-                         target="_blank" rel="noopener noreferrer" class="w-full inline-flex justify-center items-center px-4 py-2.5 rounded-lg text-sm font-semibold border border-gray-700 text-gray-300 hover:bg-gray-800 transition-all">
-                            View Live Site
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    <div class="case-actions">
+                        <a class="btn btn-primary" href="https://nexus-chwr.vercel.app/" target="_blank" rel="noopener noreferrer">
+                            View live demo
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            <span class="sr-only">(opens in a new tab)</span>
+                        </a>
+                        <a class="btn btn-secondary" href="https://github.com/raiyo395/nexus" target="_blank" rel="noopener noreferrer">
+                            View code on GitHub
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                            <span class="sr-only">(opens in a new tab)</span>
                         </a>
                     </div>
-                </div>
+                    <p class="case-note">The demo runs on Sepolia. Switch your wallet to that network and use testnet ETH; no real funds are needed.</p>
 
-                <!-- Lumiere -->
-                <div class="bg-[#111827] border border-gray-800 rounded-xl overflow-hidden hover:border-blue-500/50 hover:glow-cyan transition-all duration-300 flex flex-col group">
-
-                    <a href="https://raiyo395.github.io/lumierestore/" target="_blank" rel="noopener noreferrer" class="block bg-[#0f172a] border-b border-gray-800 relative">
-                        <img src="images/lumiere-hero.png" alt="Lumière Skincare storefront homepage" class="w-full h-48 object-cover object-top" loading="lazy">
-                        <span class="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-wider bg-slate-900/80 text-blue-400 px-2 py-1 rounded backdrop-blur-sm">Live Site</span>
-                    </a>
-
-                    <div class="p-6 space-y-4 flex-1">
-                        <span class="text-xs font-bold uppercase tracking-wider text-gray-400 bg-gray-500/10 px-2.5 py-1 rounded">Foundation Build</span>
-                        <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">Lumière Skincare</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">
-                            First full storefront build — cart and payment summary logic tested end to end, before any of it touched a wallet or a chain.
-                        </p>
-
-                        <div class="flex flex-wrap gap-2 pt-2">
-                            <span class="text-[11px] font-mono bg-gray-800 text-gray-300 px-2 py-0.5 rounded">Semantic HTML5</span>
-                            <span class="text-[11px] font-mono bg-gray-800 text-gray-300 px-2 py-0.5 rounded">CSS Architecture</span>
-                            <span class="text-[11px] font-mono bg-gray-800 text-gray-300 px-2 py-0.5 rounded">Vanilla JavaScript</span>
+                    <dl class="facts">
+                        <div>
+                            <dt>The problem</dt>
+                            <dd>
+                                Wallet apps can leave people unsure whether a transaction is waiting, rejected, or done.
+                                I built Nexus to practice making those states clear.
+                            </dd>
                         </div>
+                        <div>
+                            <dt>My role</dt>
+                            <dd>
+                                Solo project. I chose the stack, built the interface and the wallet integration, and deployed it on Vercel.
+                                I used AI coding tools while building it.
+                            </dd>
+                        </div>
+                        <div>
+                            <dt>Stack and why</dt>
+                            <dd>
+                                React and TypeScript for typed UI state. wagmi for wallet connection, balances, and transaction status.
+                                viem as the underlying client. Tailwind CSS for styling. Vite for the build.
+                            </dd>
+                        </div>
+                        <div>
+                            <dt>What it does</dt>
+                            <dd>
+                                <ul>
+                                    <li>Connects a wallet.</li>
+                                    <li>Reads the connected wallet's Sepolia ETH balance from the chain.</li>
+                                    <li>Shows an asset allocation table, using labeled sample data.</li>
+                                    <li>Tracks transaction state, including pending transactions.</li>
+                                    <li>Handles rejected signatures.</li>
+                                    <li>Works with more than one wallet provider.</li>
+                                    <li>Responsive layout.</li>
+                                </ul>
+                            </dd>
+                        </div>
+                        <div>
+                            <dt>How I tested</dt>
+                            <dd>
+                                Manual testing on Sepolia with a connected wallet.
+                            </dd>
+                        </div>
+                        <div>
+                            <dt>Limits</dt>
+                            <dd>
+                                Testnet only, and testnet ETH has no market value.
+                                The portfolio table under the balance is sample data and is labeled that way in the app.
+                                The project has not been audited and is not built or tested for real funds.
+                            </dd>
+                        </div>
+                    </dl>
+</div>
+            </article>
+
+            <!-- Supporting projects -->
+            <h3 class="subhead">Supporting frontend work</h3>
+            <p>Two demo storefronts I built before Nexus. They are where I practiced keeping interface state predictable.</p>
+
+            <div class="cards">
+                <article class="card">
+                    <a class="thumb" href="https://raiyo395.github.io/vantic/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                        <img src="images/vantik-hero.png" alt="" loading="lazy">
+                    </a>
+                    <div class="card-body">
+                        <h4>Vantik Storefront</h4>
+                        <p>
+                            A dark-themed demo store. The cart updates without page reloads and keeps its contents in localStorage.
+                        </p>
+                        <ul class="tags" aria-label="Technologies">
+                            <li>Tailwind CSS</li>
+                            <li>JavaScript ES6</li>
+                            <li>localStorage</li>
+                        </ul>
                     </div>
-                    <div class="p-6 pt-0 bg-[#0f172a]/50 border-t border-gray-800/60">
-                        <a href="https://raiyo395.github.io/lumierestore/" target="_blank" rel="noopener noreferrer" class="w-full inline-flex justify-center items-center px-4 py-2.5 rounded-lg text-sm font-semibold border border-gray-700 text-gray-300 hover:bg-gray-800 transition-all">
-                            View Live Site
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    <div class="card-foot">
+                        <a class="btn btn-secondary" href="https://raiyo395.github.io/vantic/" target="_blank" rel="noopener noreferrer">
+                            View live site <span class="sr-only">for Vantik Storefront (opens in a new tab)</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                         </a>
                     </div>
-                </div>
-            </div>
-        </section>
+                </article>
 
-        <!-- How I work -->
-        <section class="space-y-8">
-            <div class="space-y-2 text-center sm:text-left">
-                <h2 class="text-2xl font-bold text-white tracking-tight">How I work</h2>
-                <p class="text-gray-400 text-sm">Simple, fast, and low-risk to start.</p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 space-y-2">
-                    <span class="text-violet-400 text-2xl font-extrabold">01</span>
-                    <h3 class="text-white font-bold">Free audit</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">I look at your wallet connect or on-chain flow and point out 2-3 specific things costing you users — no charge, no obligation.</p>
-                </div>
-                <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 space-y-2">
-                    <span class="text-violet-400 text-2xl font-extrabold">02</span>
-                    <h3 class="text-white font-bold">Fixed-scope quote</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">You get a clear price and timeline before any work starts — no open-ended hourly billing.</p>
-                </div>
-                <div class="bg-[#111827] border border-gray-800 rounded-xl p-6 space-y-2">
-                    <span class="text-violet-400 text-2xl font-extrabold">03</span>
-                    <h3 class="text-white font-bold">Built &amp; tested</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">Delivered fast, tested end to end across wallets and devices before it ever reaches your users.</p>
-                </div>
-            </div>
-            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-x-6 gap-y-2 text-xs text-gray-500 pt-2">
-                <span class="flex items-center gap-1.5">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                    Usually replies within 24 hours
-                </span>
-                <span class="flex items-center gap-1.5">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                    No obligation to hire after the audit
-                </span>
-                <span class="flex items-center gap-1.5">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                    Payment via USDT (crypto) or standard invoice
-                </span>
-            </div>
-        </section>
-
-        <!-- About -->
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4 border-t border-gray-800/60">
-            <div class="md:col-span-1 space-y-3">
-                <h2 class="text-xl font-bold text-white tracking-tight">About</h2>
-                <p class="text-sm text-gray-400 leading-relaxed">
-                    Self-taught developer who learns by shipping. Every project here is deployed and clickable, built from scratch rather than copied from a tutorial.
-                </p>
-            </div>
-            <div class="md:col-span-2 space-y-3">
-                <h2 class="text-xl font-bold text-white tracking-tight">Available For</h2>
-                <p class="text-sm text-gray-400 leading-relaxed">
-                    Independent frontend contracts for Web3 products — wallet connection flows, on-chain dashboards, DeFi front ends. Comes from an e-commerce frontend background, so state management and no-confusion UX are second nature, not new territory. Open to freelance and contract work — reach out below.
-                </p>
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section class="border-t border-gray-800/60 pt-16">
-            <div class="max-w-xl mx-auto text-center space-y-4">
-                <h2 class="text-2xl font-bold text-white tracking-tight">Let's work together</h2>
-                <p class="text-gray-400 text-sm">Have a Web3 product that needs a frontend, or want a free look at your wallet flow first? Send me an email and I'll get back to you.</p>
-                <div class="flex flex-wrap items-center justify-center gap-3">
-                    <a href="mailto:aricraiyovext@gmail.com?subject=Free%20Web3%20UX%20Audit%20Request"
-                        class="inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-semibold bg-violet-500 text-slate-900 hover:bg-violet-400 transition-all shadow-lg shadow-violet-500/10">
-                        Request a free Web3 UX audit
+                <article class="card">
+                    <a class="thumb" href="https://raiyo395.github.io/lumierestore/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                        <img src="images/lumiere-hero.png" alt="" loading="lazy">
                     </a>
-                    <a href="mailto:aricraiyovext@gmail.com"
-                        class="inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-semibold border border-gray-700 text-gray-300 hover:bg-gray-800 transition-all">
-                        aricraiyovext@gmail.com
-                    </a>
-                    <a href="https://t.me/AricRaiyo" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-semibold border border-gray-700 text-gray-300 hover:bg-gray-800 transition-all">
-                        Telegram: @AricRaiyo
-                    </a>
-                    <a href="https://x.com/raiyodev39cs" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-semibold border border-gray-700 text-gray-300 hover:bg-gray-800 transition-all">
-                        X: @raiyodev39cs
-                    </a>
-                    <a href="https://github.com/raiyo395" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-semibold border border-gray-700 text-gray-300 hover:bg-gray-800 transition-all">
-                        GitHub
-                    </a>
-                </div>
-            </div>
-        </section>
-
-    </main>
-    
-
-    <!-- Footer -->
-    <footer class="border-t border-gray-800/60 mt-24">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
-            <p>&copy; 2026 Aric Raiyo. All rights reserved.</p>
-            <div class="flex gap-6">
-                <a href="https://github.com/raiyo395" class="hover:text-gray-300 transition-colors">GitHub</a>
-                <a href="https://t.me/AricRaiyo" class="hover:text-gray-300 transition-colors">Telegram</a>
-                <a href="https://x.com/raiyodev39cs" class="hover:text-gray-300 transition-colors">X</a>
-                <a href="mailto:aricraiyovext@gmail.com" class="hover:text-gray-300 transition-colors">Email</a>
+                    <div class="card-body">
+                        <h4>Lumière Skincare</h4>
+                        <p>
+                            My first full demo storefront, with cart and order-summary logic written in plain JavaScript. No real payments are processed.
+                        </p>
+                        <ul class="tags" aria-label="Technologies">
+                            <li>Semantic HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </div>
+                    <div class="card-foot">
+                        <a class="btn btn-secondary" href="https://raiyo395.github.io/lumierestore/" target="_blank" rel="noopener noreferrer">
+                            View live site <span class="sr-only">for Lumière Skincare (opens in a new tab)</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        </a>
+                    </div>
+                </article>
             </div>
         </div>
-    </footer>
+    </section>
 
+    <!-- Process -->
+    <section class="section" id="process">
+        <div class="wrap">
+            <div class="section-head">
+                <h2>How a project works</h2>
+                <p>Small steps, so you can see how I work before you commit.</p>
+            </div>
+
+            <ol class="steps">
+                <li>
+                    <h3>Free review</h3>
+                    <p>Send me a link to one wallet connect or transaction flow (a testnet link is fine) and the wallet you use. I reply with 2 or 3 specific usability issues in that flow. This is a usability review, not a security audit, and you are not obliged to hire me afterwards.</p>
+                </li>
+                <li>
+                    <h3>Fixed-scope quote</h3>
+                    <p>If you want the fixes built, I quote a fixed price and timeline before any work starts, not open-ended hourly billing.</p>
+                </li>
+                <li>
+                    <h3>Build and test</h3>
+                    <p>I build in React, TypeScript, and Tailwind, and test the flow on the wallets and screen sizes we agree on before handoff.</p>
+                </li>
+            </ol>
+
+            <p class="terms">
+                I aim to reply within 24 hours. Payment in USDT or USDC; an invoice is available on request.
+            </p>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section about" id="about">
+        <div class="wrap">
+            <div class="section-head">
+                <h2>About</h2>
+            </div>
+            <p>
+                I'm a self-taught frontend developer. I started with e-commerce storefronts, building cart and order-summary logic, and moved into Web3 interfaces with wagmi and viem.
+                I learn by building and deploying, and I use AI coding tools in my workflow.
+            </p>
+            <p>
+                I don't have client projects yet. That is why the first step is a free review and the work is scoped and priced before it starts.
+            </p>
+
+            <div class="fit">
+                <div>
+                    <h3>Good fit</h3>
+                    <ul>
+                        <li>Wallet connect and network-switching flows</li>
+                        <li>Transaction status, pending, and error states</li>
+                        <li>Dashboards that read on-chain data</li>
+                        <li>Restyling or tidying an existing React and Tailwind app</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Not a fit</h3>
+                    <ul>
+                        <li>Smart contracts or security audits</li>
+                        <li>Backend or infrastructure work</li>
+                        <li>Projects that need production experience I have not shown yet</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+        <div class="wrap">
+            <div class="section-head">
+                <h2>Contact</h2>
+                <p>Email is best. Send a link to the flow you want reviewed and the wallet you use, or a short description of the project.</p>
+            </div>
+
+            <div class="contact-links">
+                <a class="btn btn-primary" href="mailto:aricraiyovext@gmail.com?subject=Free%20Web3%20UX%20Review%20Request">Request a free review</a>
+                <a class="btn btn-secondary" href="https://t.me/AricRaiyo" target="_blank" rel="noopener noreferrer">Telegram<span class="sr-only"> (opens in a new tab)</span></a>
+                <a class="btn btn-secondary" href="https://x.com/raiyodev39cs" target="_blank" rel="noopener noreferrer">X<span class="sr-only"> (opens in a new tab)</span></a>
+                <a class="btn btn-secondary" href="https://github.com/raiyo395" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in a new tab)</span></a>
+            </div>
+            <p class="contact-mail">Email: <a href="mailto:aricraiyovext@gmail.com">aricraiyovext@gmail.com</a></p>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="wrap">
+        <p>&copy; 2026 Aric Raiyo</p>
+    </div>
+</footer>
 </body>
 </html>
