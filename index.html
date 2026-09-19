@@ -117,7 +117,7 @@
         <section id="projects" class="space-y-8">
             <div class="space-y-2 text-center sm:text-left">
                 <h2 class="text-2xl font-bold text-white tracking-tight">Projects</h2>
-                <p class="text-gray-400 text-sm">Deployed builds you can open and click through. Each card says what's real and what's sample data.</p>
+                <p class="text-gray-400 text-sm">Deployed builds you can open and click through.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -126,7 +126,7 @@
                 <div class="bg-[#111827] border border-violet-500/40 rounded-xl overflow-hidden hover:border-violet-400/60 hover:glow transition-all duration-300 flex flex-col group md:col-span-2">
 
                     <a href="https://nexus-chwr.vercel.app/" target="_blank" rel="noopener noreferrer" class="block bg-[#0f172a] border-b border-gray-800 relative">
-                        <img src="images/nexus-hero.png" alt="Nexus DeFi dashboard showing a portfolio view with sample data" class="w-full h-96 object-cover object-top" loading="lazy">
+                        <img src="images/nexus-hero.png" alt="Nexus DeFi dashboard with a connected wallet balance and asset table" class="w-full h-96 object-cover object-top" loading="lazy">
                         <span class="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-wider bg-slate-900/80 text-violet-400 px-2 py-1 rounded backdrop-blur-sm">Live Site</span>
                     </a>
 
@@ -136,7 +136,7 @@
                         </div>
                         <h3 class="text-xl font-bold text-white group-hover:text-violet-400 transition-colors">Nexus DeFi Dashboard</h3>
                         <p class="text-sm text-gray-400 leading-relaxed">
-                            Connect a wallet and send transactions with just a signature, no card forms and no accounts. Wallet connection and transactions run for real on Sepolia testnet (wagmi + viem), including pending states, rejected signatures, and multiple wallet providers. The portfolio and allocation views use sample data.
+                            Connect a wallet and send transactions with just a signature, no card forms and no accounts. Built with wagmi and viem on Sepolia testnet, it reads the connected wallet's balance straight from the chain and handles pending transactions, rejected signatures, and multiple wallet providers.
                         </p>
 
                         <div class="flex flex-wrap gap-2 pt-2">
@@ -148,11 +148,18 @@
                         </div>
                     </div>
                     <div class="p-6 pt-0 bg-[#0f172a]/50 border-t border-gray-800/60">
-                        <a href="https://nexus-chwr.vercel.app/"
-                         target="_blank" rel="noopener noreferrer" class="w-full inline-flex justify-center items-center px-4 py-2.5 rounded-lg text-sm font-semibold bg-violet-500 text-slate-900 hover:bg-violet-400 transition-all shadow-lg shadow-violet-500/10">
-                            View Live Site
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="https://nexus-chwr.vercel.app/"
+                             target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex justify-center items-center px-4 py-2.5 rounded-lg text-sm font-semibold bg-violet-500 text-slate-900 hover:bg-violet-400 transition-all shadow-lg shadow-violet-500/10">
+                                View Live Site
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            </a>
+                            <a href="https://github.com/raiyo395/nexus"
+                             target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex justify-center items-center px-4 py-2.5 rounded-lg text-sm font-semibold border border-gray-700 text-gray-300 hover:bg-gray-800 transition-all">
+                                View Code
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
