@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aric Raiyo | Web3 Frontend Developer</title>
-    <meta name="description" content="Frontend developer building wallet connection flows, transaction states, and on-chain dashboards with React, TypeScript, wagmi, and viem. Also e-commerce and dashboard frontends.">
+    <title>Aric Raiyo | Frontend Developer (React, TypeScript, Web3)</title>
+    <meta name="description" content="Frontend developer building React, TypeScript, and Tailwind CSS interfaces: dashboards, landing pages, e-commerce storefronts, and Web3 wallet flows.">
     <meta name="theme-color" content="#0b0f19">
     <link rel="canonical" href="https://raiyo395.github.io/portfolio/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Aric Raiyo | Web3 Frontend Developer">
-    <meta property="og:description" content="Wallet, transaction, and on-chain dashboard interfaces built with React, TypeScript, wagmi, and viem.">
+    <meta property="og:title" content="Aric Raiyo | Frontend Developer (React, TypeScript, Web3)">
+    <meta property="og:description" content="Dashboards, landing pages, storefronts, and Web3 interfaces built with React, TypeScript, and Tailwind CSS.">
     <meta property="og:url" content="https://raiyo395.github.io/portfolio/">
     <meta property="og:image" content="https://raiyo395.github.io/portfolio/images/nexus-hero.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@raiyodev39cs">
-    <meta name="twitter:title" content="Aric Raiyo | Web3 Frontend Developer">
-    <meta name="twitter:description" content="Wallet, transaction, and on-chain dashboard interfaces built with React, TypeScript, wagmi, and viem.">
+    <meta name="twitter:title" content="Aric Raiyo | Frontend Developer (React, TypeScript, Web3)">
+    <meta name="twitter:description" content="Dashboards, landing pages, storefronts, and Web3 interfaces built with React, TypeScript, and Tailwind CSS.">
     <meta name="twitter:image" content="https://raiyo395.github.io/portfolio/images/nexus-hero.png">
 
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b0f19'/%3E%3Ctext x='50' y='68' font-size='58' font-family='sans-serif' font-weight='800' fill='%23a78bfa' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
@@ -144,7 +144,7 @@
             margin-bottom: 1.25rem;
         }
         .status .dot { width: .5rem; height: .5rem; border-radius: 50%; background: var(--ok); }
-        .hero h1 { font-size: clamp(2rem, 5.5vw, 3.4rem); font-weight: 800; max-width: 20ch; }
+        .hero h1 { font-size: clamp(2rem, 5.5vw, 3.4rem); font-weight: 800; max-width: 26ch; }
         .hero .lead { margin-top: 1.5rem; max-width: 62ch; color: var(--muted); font-size: 1.1rem; }
         .hero-actions { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .75rem; }
         .hero-tools { margin-top: 2.5rem; max-width: 62ch; font-size: .9rem; color: var(--muted); }
@@ -211,6 +211,7 @@
         @media (min-width: 768px) { .fit { grid-template-columns: 1fr 1fr; } }
         .fit h3 { font-size: 1.05rem; margin-bottom: .75rem; }
         .fit ul { padding-left: 1.1rem; display: grid; gap: .4rem; color: var(--muted); }
+        .fit strong { color: var(--text); font-weight: 600; }
 
         /* ---------- Contact ---------- */
         .contact-links { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
@@ -243,18 +244,18 @@
     <section class="hero" id="top">
         <div class="wrap">
             <p class="status"><span class="dot" aria-hidden="true"></span>Open to freelance work</p>
-            <h1>Frontend developer for wallet and dApp interfaces.</h1>
+            <h1>Frontend interfaces built to feel clear and reliable.</h1>
             <p class="lead">
-                I'm Aric Raiyo. I build React and TypeScript interfaces for wallet connection, transaction states, and on-chain dashboards, using wagmi and viem. I also build e-commerce and dashboard frontends with React and Tailwind CSS.
+                I'm Aric Raiyo. I build modern websites and web apps with React, TypeScript, and Tailwind CSS, from dashboards and landing pages to e-commerce storefronts and Web3 interfaces. My Web3 work has taken me deep into the frontend problems that matter across products: complex state, changing data, asynchronous actions, and clear feedback when something succeeds, fails, or is still processing.
             </p>
             <div class="hero-actions">
-                <a class="btn btn-primary" href="mailto:aricraiyovext@gmail.com?subject=Free%20Wallet%20Flow%20Review">Get a free wallet-flow review</a>
+                <a class="btn btn-primary" href="mailto:aricraiyovext@gmail.com?subject=Frontend%20Project%20Inquiry">Start a project</a>
+                <a class="btn btn-secondary" href="mailto:aricraiyovext@gmail.com?subject=Free%20Wallet%20Flow%20Review">Have a Web3 flow? Get a free review</a>
                 <a class="btn btn-secondary" href="#work">View my work</a>
-                <a class="btn btn-secondary" href="https://t.me/AricRaiyo" target="_blank" rel="noopener noreferrer">Message on Telegram<span class="sr-only"> (opens in a new tab)</span></a>
             </div>
             <p class="hero-tools">
                 <strong>Core stack:</strong> React, TypeScript, Tailwind CSS, Vite, Git and GitHub.
-                Web3: wagmi and viem.
+                Web3 specialty: wagmi, viem, wallet connection, and transaction states.
             </p>
         </div>
     </section>
@@ -275,10 +276,10 @@
 
                 <div class="case-body">
                     <span class="badge">Main project · Sepolia testnet</span>
-                    <h3 id="nexus-title">Nexus: a wallet dashboard</h3>
+                    <h3 id="nexus-title">Nexus — Web3 dashboard</h3>
                     <p class="lede">
-                        Nexus connects to a browser wallet, reads the connected wallet's balance from the chain, and shows transaction states such as pending and rejected.
-                        It is a portfolio project, built to show how I handle wallet UI.
+                        A React dashboard that connects to a user's wallet, reads their Sepolia ETH balance, and shows what is happening with each action: processing, completed, or rejected.
+                        Built as a solo portfolio project to demonstrate wallet integration and clear feedback in an interface with asynchronous state.
                     </p>
 
                     <div class="case-actions">
@@ -293,6 +294,10 @@
                             <span class="sr-only">(opens in a new tab)</span>
                         </a>
                     </div>
+                    <!-- ADD WHEN READY: a 30-second screen recording of Nexus (connect, pending, rejected).
+                         Save it as images/nexus-demo.mp4, then uncomment:
+                    <video src="images/nexus-demo.mp4" poster="images/nexus-hero.png" controls muted loop playsinline style="width:100%;border-radius:8px;border:1px solid var(--line)"></video>
+                    -->
                     <p class="case-note">The demo runs on Sepolia. Switch your wallet to that network and use testnet ETH; no real funds are needed.</p>
 
                     <dl class="facts">
@@ -321,11 +326,11 @@
                             <dt>What it does</dt>
                             <dd>
                                 <ul>
-                                    <li>Connects a wallet.</li>
-                                    <li>Reads the connected wallet's Sepolia ETH balance from the chain.</li>
+                                    <li>Connects a wallet (the app where a user's crypto is held).</li>
+                                    <li>Reads the connected wallet's balance from the blockchain. Sepolia is a practice network with play money, so nothing real is at risk.</li>
                                     <li>Shows an asset allocation table, using labeled sample data.</li>
-                                    <li>Tracks transaction state, including pending transactions.</li>
-                                    <li>Handles rejected signatures.</li>
+                                    <li>Tracks transaction state, including pending: an action that has been submitted but isn't confirmed yet, like a payment still processing.</li>
+                                    <li>Handles rejected signatures, which is when the user declines an action in their wallet.</li>
                                     <li>Works with more than one wallet provider.</li>
                                     <li>Responsive layout.</li>
                                 </ul>
@@ -336,6 +341,13 @@
                             <dd>
                                 A wallet UI can't assume the wallet's state is current. If the app doesn't listen for account and network changes, it keeps showing the old balance and status after the user switches.
                                 Wallet state can change at any moment, so the interface has to follow it.
+                            </dd>
+                        </div>
+                        <div>
+                            <dt>Why it matters beyond Web3</dt>
+                            <dd>
+                                Dashboards, checkout flows, billing screens, and other data-driven web apps ask users the same questions: what is happening, what changed, did my action work, and what can I do next.
+                                Nexus is built to answer those clearly.
                             </dd>
                         </div>
                         <div>
@@ -391,7 +403,7 @@
                     <div class="card-body">
                         <h4>Lumière Skincare</h4>
                         <p>
-                            My first full demo storefront, with cart and order-summary logic written in plain JavaScript. No real payments are processed.
+                            A demo storefront with cart and order-summary logic written in plain JavaScript. No real payments are processed.
                         </p>
                         <ul class="tags" aria-label="Technologies">
                             <li>Semantic HTML</li>
@@ -420,8 +432,8 @@
 
             <ol class="steps">
                 <li>
-                    <h3>Free review or project discussion</h3>
-                    <p>Send me your wallet or on-chain flow, website, design, or project idea. For Web3 flows, I point out 2-3 specific things worth improving, free. For anything else, I review the scope and suggest a practical frontend approach.</p>
+                    <h3>Project discussion</h3>
+                    <p>Send me your website, design, product idea, or existing frontend. I review the scope, identify what needs to be built, and suggest a practical approach. For Web3 flows, I also point out 2-3 specific improvements, free.</p>
                 </li>
                 <li>
                     <h3>Fixed-scope quote</h3>
@@ -434,10 +446,7 @@
             </ol>
 
             <p class="terms">
-                I aim to reply within 24 hours. Payment in USDT or USDC; an invoice is available on request.
-            </p>
-            <p class="terms">
-                My first few client projects are at an introductory rate, in exchange for a short testimonial if you're happy with the result.
+                I aim to reply within 24 hours. Payment in USDT or USDC; other payment methods can be discussed. An invoice is available on request.
             </p>
         </div>
     </section>
@@ -449,7 +458,7 @@
                 <h2>About</h2>
             </div>
             <p>
-                I'm a self-taught frontend developer focused on building real interfaces and deploying them. I started with e-commerce storefronts and moved into React, TypeScript, and Web3 interfaces with wagmi and viem. I use AI coding tools as part of my workflow, while keeping the implementation and decisions under my control.
+                I'm a frontend developer focused on building real interfaces and deploying them. I started with e-commerce storefronts and moved into React, TypeScript, and Web3 interfaces with wagmi and viem. I use AI coding tools as part of my workflow, while keeping the implementation and decisions under my control.
             </p>
             <p>
                 The projects above are deployed and open to test, and the Nexus code is public on GitHub. For new projects, I scope and price the work before it starts.
@@ -457,15 +466,15 @@
 
             <div class="fit">
                 <div>
-                    <h3>Good fit</h3>
+                    <h3>Good fit if you need&hellip;</h3>
                     <ul>
-                        <li>Wallet connect and network-switching flows</li>
-                        <li>Transaction status, pending, and error states</li>
-                        <li>Dashboards that read on-chain data</li>
-                        <li>E-commerce interfaces and frontend state</li>
-                        <li>Responsive React websites and landing pages</li>
-                        <li>Dashboards and interactive web apps</li>
-                        <li>Restyling or improving an existing React and Tailwind app</li>
+                        <li><strong>A React frontend</strong> for a web app, dashboard, or SaaS product</li>
+                        <li><strong>A landing page</strong> for a startup or product</li>
+                        <li><strong>An e-commerce storefront</strong> with clean interaction and cart logic</li>
+                        <li><strong>A cleanup</strong> of an existing React and Tailwind frontend</li>
+                        <li><strong>Complex UI states:</strong> loading, empty, success, pending, and error</li>
+                        <li><strong>API-driven interfaces</strong> with clear user feedback</li>
+                        <li><strong>Web3 flows:</strong> wallets, network switching, transactions, and on-chain data</li>
                     </ul>
                 </div>
                 <div>
@@ -483,12 +492,13 @@
     <section class="section" id="contact">
         <div class="wrap">
             <div class="section-head">
-                <h2>Contact</h2>
-                <p>Have a wallet flow, dApp, dashboard, or website in mind? Send me a short description and I will reply with the next steps.</p>
+                <h2>Tell me about your project</h2>
+                <p>Send me your website, design, product idea, or existing frontend and I'll reply with next steps. Have a Web3 flow? I'll review it and share 2-3 specific improvements, free.</p>
             </div>
 
             <div class="contact-links">
                 <a class="btn btn-primary" href="mailto:aricraiyovext@gmail.com?subject=Frontend%20Project%20Inquiry">Start a project</a>
+                <a class="btn btn-secondary" href="mailto:aricraiyovext@gmail.com?subject=Free%20Wallet%20Flow%20Review">Free Web3 flow review</a>
                 <a class="btn btn-secondary" href="https://t.me/AricRaiyo" target="_blank" rel="noopener noreferrer">Telegram<span class="sr-only"> (opens in a new tab)</span></a>
                 <a class="btn btn-secondary" href="https://x.com/raiyodev39cs" target="_blank" rel="noopener noreferrer">X<span class="sr-only"> (opens in a new tab)</span></a>
                 <a class="btn btn-secondary" href="https://github.com/raiyo395" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in a new tab)</span></a>
