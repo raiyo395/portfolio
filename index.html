@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aric Raiyo | Full-Stack MVPs, Dashboards &amp; Web3 Interfaces for Startups</title>
-<meta name="description" content="Solo product studio delivering fixed-scope MVPs, dashboards, and Web3 interfaces with React, TypeScript, and serverless backends. Live in weeks, not quarters.">
+<title>Aric Raiyo | Websites, dashboards, and Web3 interfaces</title>
+<meta name="description" content="I’m Aric, a freelance developer building websites, dashboards, and Web3 interfaces with React and TypeScript. Direct communication, clear scope, and honest timelines.">
 <meta name="theme-color" content="#0b0f19">
 <link rel="canonical" href="https://raiyo395.github.io/portfolio/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Aric Raiyo | Full-Stack MVPs, Dashboards &amp; Web3 Interfaces for Startups">
-<meta property="og:description" content="Solo product studio delivering fixed-scope MVPs, dashboards, and Web3 interfaces with React, TypeScript, and serverless backends.">
+<meta property="og:title" content="Aric Raiyo | Websites, dashboards, and Web3 interfaces">
+<meta property="og:description" content="I’m Aric, a freelance developer building websites, dashboards, and Web3 interfaces. Direct communication, clear scope, and honest timelines.">
 <meta property="og:url" content="https://raiyo395.github.io/portfolio/">
 <meta property="og:image" content="https://raiyo395.github.io/portfolio/images/nexus-hero.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@raiyodev">
-<meta name="twitter:title" content="Aric Raiyo | Full-Stack MVPs, Dashboards &amp; Web3 Interfaces for Startups">
-<meta name="twitter:description" content="Solo product studio delivering fixed-scope MVPs, dashboards, and Web3 interfaces with React, TypeScript, and serverless backends.">
+<meta name="twitter:site" content="@aricraiyo395">
+<meta name="twitter:title" content="Aric Raiyo | Websites, dashboards, and Web3 interfaces">
+<meta name="twitter:description" content="I’m Aric, a freelance developer building websites, dashboards, and Web3 interfaces. Direct communication, clear scope, and honest timelines.">
 <meta name="twitter:image" content="https://raiyo395.github.io/portfolio/images/nexus-hero.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b0f19'/%3E%3Ctext x='50' y='68' font-size='58' font-family='sans-serif' font-weight='800' fill='%23a78bfa' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,6 +79,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 .build li strong{display:block;color:#fff;font-weight:700;margin-bottom:.25rem}
 .build li span{color:var(--muted);font-size:.95rem}
 
+/* --- Project / case study --- */
 .case{background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius-card);overflow:hidden;transition:border-color .3s ease,box-shadow .3s ease}
 .case:hover{border-color:rgba(167,139,250,.35);box-shadow:0 12px 40px rgba(0,0,0,.35)}
 .case-shot{display:block;background:var(--surface-2);border-bottom:1px solid var(--line);overflow:hidden}
@@ -99,6 +100,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 .facts ul{padding-left:1.1rem;display:grid;gap:.3rem}
 @media (min-width:768px){.facts>div{display:grid;grid-template-columns:9.5rem 1fr;gap:1.5rem}.facts dt{margin-bottom:0;padding-top:.1rem}}
 
+/* --- Cards --- */
 .subhead{font-size:1.15rem;margin:3rem 0 .4rem}
 .subhead+p{color:var(--muted);margin-bottom:1.5rem;max-width:60ch}
 .cards{display:grid;gap:1.5rem;grid-template-columns:1fr}
@@ -115,6 +117,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 .tags li{font-family:var(--mono);font-size:.75rem;color:var(--text);background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius-tag);padding:.15rem .5rem}
 .card-foot{padding:0 1.5rem 1.5rem}.card-foot .btn{width:100%}
 
+/* --- Process --- */
 .steps{list-style:none;counter-reset:step;display:grid;gap:1rem}
 @media (min-width:768px){.steps{grid-template-columns:repeat(3,1fr)}}
 .steps li{counter-increment:step;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);padding:1.5rem;transition:border-color .3s ease,transform .3s ease}
@@ -124,6 +127,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 .steps p{color:var(--muted);font-size:.95rem}
 .terms{margin-top:1.5rem;color:var(--muted);font-size:.95rem;max-width:62ch}
 
+/* --- About --- */
 .about p{max-width:62ch;color:var(--muted)}
 .about p+p{margin-top:1rem}
 .fit{display:grid;gap:1.5rem;margin-top:2rem}
@@ -132,10 +136,12 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 .fit ul{padding-left:1.1rem;display:grid;gap:.4rem;color:var(--muted)}
 .fit strong{color:var(--text);font-weight:600}
 
+/* --- Contact --- */
 .contact-links{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}
 .contact-mail{margin-top:1.25rem;color:var(--muted)}
 .site-footer{border-top:1px solid var(--line);padding-block:2rem;color:var(--muted);font-size:.875rem}
 
+/* --- Reveal animations --- */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}.reveal-delay-3{transition-delay:.3s}
@@ -154,7 +160,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 <li><a href="#process">Process</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
-<a class="btn btn-primary" href="mailto:aricraiyovext@gmail.com?subject=Discovery%20Call%20Request">Book a Discovery Call</a>
+<a class="btn btn-primary" href="mailto:aricraiyovext@gmail.com?subject=Project%20inquiry">Tell me about your project</a>
 </nav>
 </div>
 </header>
@@ -163,16 +169,16 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 
 <section class="hero" id="top">
 <div class="wrap">
-<p class="status reveal"><span class="dot" aria-hidden="true"></span>Now booking fixed-scope projects</p>
-<h1>Ship your MVP in weeks, not quarters.</h1>
-<p class="lead">I'm Aric Raiyo, a solo product studio that builds full-stack MVPs, dashboards, and Web3 interfaces for high-growth startups. One senior point of contact. Fixed scope, fixed price, clean execution from first call to production.</p>
+<p class="status reveal"><span class="dot" aria-hidden="true"></span>Open for new projects</p>
+<h1>I build websites and Web3 interfaces that make sense to real people.</h1>
+<p class="lead">I’m Aric, a freelance developer. I build landing pages, online stores, dashboards, and Web3 interfaces for people and small teams. You work with me directly, we agree on the scope before I start, and I’ll be upfront about what I can deliver and when.</p>
 <div class="hero-actions reveal reveal-delay-3">
-<a class="btn btn-primary" href="mailto:aricraiyovext@gmail.com?subject=Discovery%20Call%20Request">Book a Fixed-Scope Discovery Call</a>
-<a class="btn btn-secondary" href="#work">See the work</a>
+<a class="btn btn-primary" href="mailto:aricraiyovext@gmail.com?subject=Project%20inquiry">Tell me about your project</a>
+<a class="btn btn-secondary" href="#work">See what I've built</a>
 <a class="btn btn-secondary" href="mailto:aricraiyovext@gmail.com?subject=Free%20Wallet%20Flow%20Review">Get a free Web3 flow review</a>
 </div>
 <p class="hero-tools reveal reveal-delay-3">
-<strong>Stack:</strong> React · TypeScript · Tailwind · wagmi · viem · Supabase / Firebase
+<strong>Stuff I use:</strong> React · TypeScript · Tailwind · Vite · wagmi · viem · Supabase / Firebase · Vercel
 </p>
 </div>
 </section>
@@ -180,25 +186,24 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 <section class="section" id="build">
 <div class="wrap">
 <div class="section-head reveal">
-<h2>Technical Solutions Delivered</h2>
-<p>Everything needed to take a product from idea to live users, with no agency overhead.</p>
+<h2>What I can build for you</h2>
+<p>These are the things I get asked for most. If yours isn't listed, just ask.</p>
 </div>
 <ul class="build reveal">
-<li><strong>Full-Stack MVP Deployment</strong><span>Authentication, database, and API layer built on serverless cloud infrastructure (Supabase / Firebase). You get a deployed product with real data, not a clickable mockup, without the cost and delay of a custom backend.</span></li>
-<li><strong>Web3 Interfaces &amp; Wallet Flows</strong><span>Wallet connection, network switching, balances, and transaction lifecycle states, built on wagmi and viem. Users always know what is pending, confirmed, or rejected.</span></li>
-<li><strong>Dashboards &amp; Data-Driven Products</strong><span>Typed React interfaces for SaaS, analytics, and admin tools, with loading, empty, error, and success states designed in from the start.</span></li>
-<li><strong>Conversion-Focused Landing Pages &amp; Storefronts</strong><span>Fast, responsive, Tailwind-built pages and e-commerce flows engineered to turn traffic into signups and sales.</span></li>
-<li><strong>Frontend Rescue &amp; Refactor</strong><span>Cleanup of an existing React/Tailwind codebase: typed, consistent, and ready for your team to extend.</span></li>
+<li><strong>MVPs with a real backend setup</strong><span>Auth, database, and API through Supabase or Firebase, so you don't pay for a custom backend you don't need yet. You get something real you can log into and use, not a mockup.</span></li>
+<li><strong>Web3 interfaces and wallet flows</strong><span>Connect wallet, switch networks, show balances, handle transactions. The important part is showing users what's happening — pending, confirmed, or rejected. Built with wagmi and viem.</span></li>
+<li><strong>Dashboards and data-heavy apps</strong><span>React interfaces for SaaS tools, analytics, and admin panels. I build the boring stuff too — loading states, empty states, error states — because that's where most dashboards fall apart.</span></li>
+<li><strong>Landing pages and storefronts</strong><span>Fast, clean pages built with Tailwind. Not fancy, just designed to load quickly and convert visitors into signups or customers.</span></li>
+<li><strong>Fixing up existing React code</strong><span>If you have a messy React/Tailwind codebase that needs cleaning up, I can go through it, fix the types, make it consistent, and hand it back so your team can actually work with it.</span></li>
 </ul>
-<p class="terms reveal"><strong>Core stack:</strong> React · TypeScript · Tailwind CSS · Vite · wagmi · viem · Supabase · Firebase · Vercel</p>
 </div>
 </section>
 
 <section class="section" id="work">
 <div class="wrap">
 <div class="section-head reveal">
-<h2>Work</h2>
-<p>Start with Nexus, the flagship system. Everything is live, so open it and click around.</p>
+<h2>Things I've built</h2>
+<p>Nexus is the main one — it's live, so you can actually open it and click around. The others are older experiments.</p>
 </div>
 
 <article class="case reveal" id="nexus" aria-labelledby="nexus-title">
@@ -206,9 +211,9 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 <img src="images/nexus-hero.png" alt="" loading="eager">
 </a>
 <div class="case-body">
-<span class="badge">Flagship system · Web3 · Sepolia testnet</span>
-<h3 id="nexus-title">Nexus: Transparent Transaction UX for Web3 Products</h3>
-<p class="lede">A wallet dashboard that makes every transaction state visible, so users never wonder whether their action worked.</p>
+<span class="badge">Flagship project · Web3 · Sepolia testnet</span>
+<h3 id="nexus-title">Nexus — making Web3 transactions less confusing</h3>
+<p class="lede">A wallet dashboard that shows every step of a transaction, so users don't sit there wondering if it worked or not.</p>
 <div class="case-actions">
 <a class="btn btn-primary" href="https://nexus-chwr.vercel.app/" target="_blank" rel="noopener noreferrer">
 View Live Demo
@@ -224,47 +229,47 @@ View Source on GitHub
 <p class="case-note">Switch your wallet to Sepolia. No real funds needed.</p>
 <dl class="facts">
 <div>
-<dt>The business problem</dt>
-<dd>In Web3 products, users abandon flows when a transaction goes quiet. A pending transaction looks like a frozen app, and a rejected signature looks like a bug. Each moment of uncertainty means a support ticket, a retry, or a lost user.</dd>
+<dt>Why I built it</dt>
+<dd>In Web3 apps, transactions often just... go quiet. A pending transaction looks like the app froze. A rejected signature looks like a bug. Users get confused, open a support ticket, or just leave. I wanted to see if I could fix that with clear UI states.</dd>
 </div>
 <div>
-<dt>Business impact (by design)</dt>
+<dt>What it does</dt>
 <dd>
 <ul>
-<li>Removes ambiguity at the highest-churn moment in the flow by showing pending, confirmed, and rejected states explicitly.</li>
-<li>Reduces support load by handling declined signatures with clear recovery messaging.</li>
-<li>Prevents stale-state errors by following wallet account and network changes in real time.</li>
-<li>The pattern transfers directly to checkout, billing, and any async-action product.</li>
+<li>Shows pending, confirmed, and rejected states clearly so users always know where they stand.</li>
+<li>Handles declined signatures with a clear message instead of a dead end.</li>
+<li>Listens for wallet account and network changes so the balance never goes stale.</li>
+<li>The same pattern works for checkout flows, billing, anything with async actions.</li>
 </ul>
 </dd>
 </div>
 <div>
-<dt>Technical architecture</dt>
+<dt>How it's built</dt>
 <dd>
 <ul>
-<li><strong>React + TypeScript:</strong> strictly typed UI state, so impossible states can't render.</li>
-<li><strong>wagmi:</strong> wallet connection, balance reads, transaction status lifecycle.</li>
-<li><strong>viem:</strong> lightweight, type-safe chain client underneath.</li>
-<li><strong>Tailwind CSS + Vite:</strong> responsive, fast-loading interface.</li>
-<li><strong>Multi-wallet support</strong> across providers.</li>
+<li><strong>React + TypeScript:</strong> typed UI state so broken states can't render.</li>
+<li><strong>wagmi:</strong> wallet connection, balances, transaction status.</li>
+<li><strong>viem:</strong> the chain client underneath.</li>
+<li><strong>Tailwind + Vite:</strong> fast, responsive UI.</li>
+<li><strong>Multi-wallet support</strong> across different providers.</li>
 <li><strong>Deployed on Vercel.</strong></li>
 </ul>
 </dd>
 </div>
 <div>
-<dt>Engineering insight</dt>
-<dd>Wallet state can change at any moment. Nexus listens for account and network changes so the interface never shows a stale balance or status after the user switches.</dd>
+<dt>One thing I learned</dt>
+<dd>Wallet state can change at any moment — user switches accounts, changes networks, disconnects. Nexus listens for all of that so the UI never shows old data. Sounds simple, but it's easy to get wrong.</dd>
 </div>
 <div>
-<dt>Scope &amp; disclosure</dt>
-<dd>Solo build: architecture, interface, wallet integration, and deployment, with AI coding tools used along the way. Testnet only, manually tested on Sepolia, not audited, and not built for real funds. The allocation table uses labeled sample data.</dd>
+<dt>Honest notes</dt>
+<dd>I built this solo. I used AI coding tools along the way, but I read and tested everything myself. It's on the Sepolia testnet only — not audited, not built for real money. The allocation table uses sample data.</dd>
 </div>
 </dl>
 </div>
 </article>
 
-<h3 class="subhead reveal">Internal R&amp;D Prototypes</h3>
-<p class="reveal">Early experiments in interface state, cart logic, and browser persistence, built before moving to React and TypeScript.</p>
+<h3 class="subhead reveal">Older experiments</h3>
+<p class="reveal">Stuff I built earlier while learning — before I moved to React and TypeScript. They're rough, but they're real.</p>
 <div class="cards">
 <article class="card reveal">
 <a class="thumb" href="https://raiyo395.github.io/vantic/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
@@ -272,7 +277,7 @@ View Source on GitHub
 </a>
 <div class="card-body">
 <h4>Vantik Storefront</h4>
-<p>Dark-themed demo store with a live-updating cart persisted in localStorage.</p>
+<p>A dark-themed demo store with a cart that updates live and saves to localStorage.</p>
 <ul class="tags" aria-label="Technologies">
 <li>Tailwind CSS</li>
 <li>JavaScript ES6</li>
@@ -292,7 +297,7 @@ View live site <span class="sr-only">for Vantik Storefront (opens in a new tab)<
 </a>
 <div class="card-body">
 <h4>Lumière Skincare</h4>
-<p>Demo storefront with cart and order-summary logic in plain JavaScript. No real payments processed.</p>
+<p>A demo storefront with cart and order summary logic in plain JavaScript. No real payments.</p>
 <ul class="tags" aria-label="Technologies">
 <li>Semantic HTML</li>
 <li>CSS</li>
@@ -310,65 +315,54 @@ View live site <span class="sr-only">for Lumière Skincare (opens in a new tab)<
 </div>
 </section>
 
-<!--
-PRICING SECTION (hidden until you fill in your own numbers).
-Delete this comment wrapper once the prices are real.
-
-<section class="section" id="pricing">
-<div class="wrap">
-<div class="section-head reveal">
-<h2>Rough pricing</h2>
-<p>Every job is quoted as a fixed price before I start. These are starting points.</p>
-</div>
-<ul class="build reveal">
-<li><strong>Landing page with wallet connect:</strong> from $FILL_IN, about FILL_IN days</li>
-<li><strong>Mint or claim page:</strong> from $FILL_IN, about FILL_IN days</li>
-<li><strong>Monthly retainer:</strong> from $FILL_IN a month for bug fixes and small features</li>
-</ul>
-</div>
-</section>
--->
-
 <section class="section" id="process">
 <div class="wrap">
 <div class="section-head reveal">
-<h2>How We Work</h2>
-<p>A predictable engagement with defined deliverables, a firm price, and no surprises.</p>
+<h2>How we'd work together</h2>
+<p>I keep this simple. You know the price and the timeline before I start.</p>
 </div>
 <ol class="steps">
 <li class="reveal">
-<h3>Discovery &amp; Scoping</h3>
-<p>Share your product idea, designs, or existing codebase. I assess requirements, identify technical risks, and recommend the fastest path to a working release. Web3 teams also get 2-3 specific flow improvements at no charge.</p>
+<h3>You tell me what you need</h3>
+<p>Send me your idea, designs, or existing code. I'll look at it, figure out what's realistic, and tell you the fastest way to get something working. If you're building something Web3, I'll also point out 2-3 things in your flow you could improve — free, no strings.</p>
 </li>
 <li class="reveal reveal-delay-1">
-<h3>Fixed-Scope Proposal</h3>
-<p>You receive a written proposal with defined deliverables, a fixed price, and a committed timeline before any work begins. No hourly drift, no scope ambiguity.</p>
+<h3>I send you a written proposal</h3>
+<p>Fixed deliverables, fixed price, fixed timeline. You see exactly what you're getting before any work starts. No hourly billing, no scope creep.</p>
 </li>
 <li class="reveal reveal-delay-2">
-<h3>Build, Verify &amp; Launch</h3>
-<p>Development in React, TypeScript, and Tailwind on serverless infrastructure, with testing across the agreed devices and functionality before handoff. You review a working product before it's delivered.</p>
+<h3>I build it and you test it</h3>
+<p>I build in React, TypeScript, and Tailwind on serverless infrastructure. I test on the devices we agreed on. You get to review a working product before it's handed over.</p>
 </li>
 </ol>
-<p class="terms reveal">Replies within 24 hours. Payment in USDT or USDC; other methods available. Invoices on request.</p>
+<p class="terms reveal">I usually reply within 24 hours. I get paid in USDT or USDC. We agree on the scope, price, and timeline before work starts.</p>
 </div>
 </section>
 
 <section class="section about" id="about">
 <div class="wrap">
 <div class="section-head reveal">
-<h2>End-to-End Applications, Built for Speed</h2>
+<h2>About me</h2>
 </div>
-<p class="reveal">I build complete user-facing applications, not just interfaces. By using managed serverless infrastructure for databases, authentication, and hosting, I avoid unnecessary infrastructure work and get products in front of real users faster.</p>
-<p class="reveal">I use AI tools while I work. I still read, test and take responsibility for everything I ship, and you deal with me directly the whole way through.</p>
+<p class="reveal">I'm a frontend developer first. For databases, auth, and hosting I lean on tools like Supabase, Firebase, and Vercel, so I can skip the infrastructure work and get something in front of real users faster.</p>
+<p class="reveal">I use AI tools while I work — I'm not hiding that. But I read, test, and take responsibility for everything I ship. And you work with me directly the whole time, not a team or an agency.</p>
 <div class="fit">
 <div class="reveal">
-<h3>Good fit if you need&hellip;</h3>
+<h3>I'm probably a good fit if you need&hellip;</h3>
 <ul>
-<li><strong>A full-stack MVP</strong> with auth, data, and a deployed frontend</li>
-<li><strong>A React dashboard</strong> or SaaS front end</li>
+<li><strong>An MVP</strong> with auth, data, and a deployed frontend</li>
+<li><strong>A React dashboard</strong> or SaaS frontend</li>
 <li><strong>A Web3 interface</strong> with wallet and transaction flows</li>
-<li><strong>A startup landing page</strong> or e-commerce storefront</li>
-<li><strong>A cleanup</strong> of an existing React/Tailwind codebase</li>
+<li><strong>A landing page</strong> or small e-commerce store</li>
+<li><strong>Someone to clean up</strong> an existing React/Tailwind codebase</li>
+</ul>
+</div>
+<div class="reveal reveal-delay-1">
+<h3>I'm probably not the right fit if you need&hellip;</h3>
+<ul>
+<li><strong>Smart contracts</strong> or other on-chain development</li>
+<li><strong>A custom backend</strong> built from scratch</li>
+<li><strong>A full-time hire</strong> (I take projects and retainers)</li>
 </ul>
 </div>
 </div>
@@ -378,14 +372,14 @@ Delete this comment wrapper once the prices are real.
 <section class="section" id="contact">
 <div class="wrap">
 <div class="section-head reveal">
-<h2>Ready to scope your build?</h2>
-<p>Send your idea, designs, or current codebase. I'll reply within 24 hours with a clear recommendation and next steps.</p>
+<h2>Got something you want to build?</h2>
+<p>Send me your idea, designs, or current code. I'll reply within 24 hours and tell you honestly if I can help.</p>
 </div>
 <div class="contact-links reveal">
-<a class="btn btn-primary" href="mailto:aricraiyovext@gmail.com?subject=Discovery%20Call%20Request">Book a Fixed-Scope Discovery Call</a>
+<a class="btn btn-primary" href="mailto:aricraiyovext@gmail.com?subject=Project%20inquiry">Tell me about your project</a>
 <a class="btn btn-secondary" href="mailto:aricraiyovext@gmail.com?subject=Free%20Wallet%20Flow%20Review">Free Web3 Flow Review</a>
 <a class="btn btn-secondary" href="https://t.me/AricRaiyo" target="_blank" rel="noopener noreferrer">Telegram<span class="sr-only"> (opens in a new tab)</span></a>
-<a class="btn btn-secondary" href="https://x.com/@aricraiyo395" target="_blank" rel="noopener noreferrer">X<span class="sr-only"> (opens in a new tab)</span></a>
+<a class="btn btn-secondary" href="https://x.com/aricraiyo395" target="_blank" rel="noopener noreferrer">X<span class="sr-only"> (opens in a new tab)</span></a>
 <a class="btn btn-secondary" href="https://github.com/raiyo395" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in a new tab)</span></a>
 </div>
 <p class="contact-mail reveal">Email: <a href="mailto:aricraiyovext@gmail.com">aricraiyovext@gmail.com</a></p>
@@ -402,10 +396,19 @@ Delete this comment wrapper once the prices are real.
 
 <script>
 const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-reveals.forEach(el => observer.observe(el));
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+} else {
+  reveals.forEach(el => el.classList.add('visible'));
+}
 document.querySelectorAll('.hero .reveal').forEach(el => el.classList.add('visible'));
 </script>
 </body>
