@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aric Raiyo | Websites, dashboards, and Web3 interfaces</title>
-<meta name="description" content="I’m Aric, a freelance developer building websites, dashboards, and Web3 interfaces with React and TypeScript. Direct communication, clear scope, and honest timelines.">
+<title>Aric Raiyo | Websites, client portals, dashboards and Web3 interfaces</title>
+<meta name="description" content="I'm Aric, a freelance developer. I build websites, client portals, dashboards and Web3 interfaces with React and TypeScript. You talk to me directly, and we agree on scope before I start.">
 <meta name="theme-color" content="#0b0f19">
 <link rel="canonical" href="https://raiyo395.github.io/portfolio/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Aric Raiyo | Websites, dashboards, and Web3 interfaces">
-<meta property="og:description" content="I’m Aric, a freelance developer building websites, dashboards, and Web3 interfaces. Direct communication, clear scope, and honest timelines.">
+<meta property="og:title" content="Aric Raiyo | Websites, client portals, dashboards and Web3 interfaces">
+<meta property="og:description" content="I'm Aric, a freelance developer. Client portals, dashboards, Web3 interfaces and websites. You talk to me directly, and we agree on scope before I start.">
 <meta property="og:url" content="https://raiyo395.github.io/portfolio/">
-<meta property="og:image" content="https://raiyo395.github.io/portfolio/images/nexus-hero.png">
+<meta property="og:image" content="https://raiyo395.github.io/portfolio/images/portal-hero.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@aricraiyo395">
-<meta name="twitter:title" content="Aric Raiyo | Websites, dashboards, and Web3 interfaces">
-<meta name="twitter:description" content="I’m Aric, a freelance developer building websites, dashboards, and Web3 interfaces. Direct communication, clear scope, and honest timelines.">
-<meta name="twitter:image" content="https://raiyo395.github.io/portfolio/images/nexus-hero.png">
+<meta name="twitter:title" content="Aric Raiyo | Websites, client portals, dashboards and Web3 interfaces">
+<meta name="twitter:description" content="I'm Aric, a freelance developer. Client portals, dashboards, Web3 interfaces and websites. You talk to me directly, and we agree on scope before I start.">
+<meta name="twitter:image" content="https://raiyo395.github.io/portfolio/images/portal-hero.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b0f19'/%3E%3Ctext x='50' y='68' font-size='58' font-family='sans-serif' font-weight='800' fill='%23a78bfa' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,6 +81,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 
 /* --- Project / case study --- */
 .case{background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius-card);overflow:hidden;transition:border-color .3s ease,box-shadow .3s ease}
+.case+.case{margin-top:2rem}
 .case:hover{border-color:rgba(167,139,250,.35);box-shadow:0 12px 40px rgba(0,0,0,.35)}
 .case-shot{display:block;background:var(--surface-2);border-bottom:1px solid var(--line);overflow:hidden}
 .case-shot img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;transition:transform .5s ease}
@@ -170,15 +171,16 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 <section class="hero" id="top">
 <div class="wrap">
 <p class="status reveal"><span class="dot" aria-hidden="true"></span>Open for new projects</p>
-<h1>I build websites and Web3 interfaces that make sense to real people.</h1>
-<p class="lead">I’m Aric, a freelance developer. I build landing pages, online stores, dashboards, and Web3 interfaces for people and small teams. You work with me directly, we agree on the scope before I start, and I’ll be upfront about what I can deliver and when.</p>
+<h1>I build client portals, dashboards and Web3 stuff that normal people can actually use.</h1>
+<p class="lead">I'm Aric, a freelance developer. I do landing pages, online stores, dashboards, client portals and Web3 interfaces, mostly for individuals and small teams. You talk to me, not an agency. We agree on what I'm building before I start, and if something's going to take longer than I said, you'll hear it from me early.</p>
 <div class="hero-actions reveal reveal-delay-3">
 <a class="btn btn-primary" href="mailto:aricraiyovext@gmail.com?subject=Project%20inquiry">Tell me about your project</a>
+<a class="btn btn-secondary" href="https://client-portal-seven-indol.vercel.app/" target="_blank" rel="noopener noreferrer">Try the live demo<span class="sr-only"> (opens in a new tab)</span></a>
 <a class="btn btn-secondary" href="#work">See what I've built</a>
 <a class="btn btn-secondary" href="mailto:aricraiyovext@gmail.com?subject=Free%20Wallet%20Flow%20Review">Get a free Web3 flow review</a>
 </div>
 <p class="hero-tools reveal reveal-delay-3">
-<strong>Stuff I use:</strong> React · TypeScript · Tailwind · Vite · wagmi · viem · Supabase / Firebase · Vercel
+<strong>What I use:</strong> React · TypeScript · Tailwind · Vite · wagmi · viem · Supabase (Auth, Postgres, RLS) / Firebase · Vercel
 </p>
 </div>
 </section>
@@ -187,14 +189,15 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 <div class="wrap">
 <div class="section-head reveal">
 <h2>What I can build for you</h2>
-<p>These are the things I get asked for most. If yours isn't listed, just ask.</p>
+<p>This is what people ask me for the most. Don't see yours? Ask anyway.</p>
 </div>
 <ul class="build reveal">
-<li><strong>MVPs with a real backend setup</strong><span>Auth, database, and API through Supabase or Firebase, so you don't pay for a custom backend you don't need yet. You get something real you can log into and use, not a mockup.</span></li>
-<li><strong>Web3 interfaces and wallet flows</strong><span>Connect wallet, switch networks, show balances, handle transactions. The important part is showing users what's happening — pending, confirmed, or rejected. Built with wagmi and viem.</span></li>
-<li><strong>Dashboards and data-heavy apps</strong><span>React interfaces for SaaS tools, analytics, and admin panels. I build the boring stuff too — loading states, empty states, error states — because that's where most dashboards fall apart.</span></li>
-<li><strong>Landing pages and storefronts</strong><span>Fast, clean pages built with Tailwind. Not fancy, just designed to load quickly and convert visitors into signups or customers.</span></li>
-<li><strong>Fixing up existing React code</strong><span>If you have a messy React/Tailwind codebase that needs cleaning up, I can go through it, fix the types, make it consistent, and hand it back so your team can actually work with it.</span></li>
+<li><strong>Client portals and multi-user apps</strong><span>Logins, roles, approvals, file sharing. Built on Supabase so clients and admins end up in the same place instead of a pile of emails.</span></li>
+<li><strong>MVPs with a real backend</strong><span>Auth, database and API through Supabase or Firebase, so you're not paying for a custom backend before you know people want the thing. You get something you can actually log into, not a mockup.</span></li>
+<li><strong>Web3 interfaces and wallet flows</strong><span>Connect wallet, switch network, show balances, send transactions. The part I care about most is telling the user what's going on: pending, confirmed, rejected. Built with wagmi and viem.</span></li>
+<li><strong>Dashboards and data-heavy apps</strong><span>React interfaces for SaaS tools, analytics and admin panels. I do the boring states too (loading, empty, error) because that's where most dashboards fall apart.</span></li>
+<li><strong>Landing pages and storefronts</strong><span>Fast, clean pages in Tailwind. Nothing fancy. They load quick and push people toward signing up or buying.</span></li>
+<li><strong>Cleaning up existing React code</strong><span>Got a messy React/Tailwind codebase? I can go through it, sort out the types, make it consistent and hand it back so your team can work in it without swearing.</span></li>
 </ul>
 </div>
 </section>
@@ -203,17 +206,89 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 <div class="wrap">
 <div class="section-head reveal">
 <h2>Things I've built</h2>
-<p>Nexus is the main one — it's live, so you can actually open it and click around. The others are older experiments.</p>
+<p>The Client Portal is my main project right now, and Nexus is the Web3 one. Both are live, so go click around.</p>
 </div>
+
+<article class="case reveal" id="client-portal" aria-labelledby="client-portal-title">
+<a class="case-shot" href="https://client-portal-seven-indol.vercel.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+<img src="images/portal-hero.png" alt="" loading="eager">
+</a>
+<div class="case-body">
+<span class="badge">Main project · Full-stack · Supabase</span>
+<h3 id="client-portal-title">Client Portal — one place for freelancers and their clients</h3>
+<p class="lede">Admins set up projects and milestones. Clients log in, see how things are going, approve a milestone or ask for changes, and download their files.</p>
+<div class="case-actions">
+<a class="btn btn-primary" href="https://client-portal-seven-indol.vercel.app/" target="_blank" rel="noopener noreferrer">
+View Live Demo
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+<span class="sr-only">(opens in a new tab)</span>
+</a>
+<a class="btn btn-secondary" href="https://github.com/raiyo395/client-portal" target="_blank" rel="noopener noreferrer">
+View Source on GitHub
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+<span class="sr-only">(opens in a new tab)</span>
+</a>
+</div>
+<p class="case-note">Hit Try as Admin or Try as Client on the login page, no sign-up needed. It runs on its own Supabase project with fake data, and there's a scheduled reset set up so it goes back to normal every night.</p>
+<dl class="facts">
+<div>
+<dt>Why I built it</dt>
+<dd>Client work gets messy when approvals are scattered across DMs and email. "Did you see my message?" "Which version was that?" I wanted one place where the client can see progress, say yes or ask for changes, and the decision actually gets written down.</dd>
+</div>
+<div>
+<dt>What it does</dt>
+<dd>
+<ul>
+<li>Admins create projects and milestones.</li>
+<li>Clients follow progress and approve a milestone or ask for changes.</li>
+<li>Every decision is kept in a history, so nothing gets lost.</li>
+<li>Clients can download the files shared on their project.</li>
+</ul>
+</dd>
+</div>
+<div>
+<dt>How it's built</dt>
+<dd>
+<ul>
+<li><strong>React + TypeScript:</strong> the app itself.</li>
+<li><strong>Tailwind, Vite, React Router:</strong> styling, dev setup and routing.</li>
+<li><strong>Supabase:</strong> Auth, Postgres, Storage and Row Level Security.</li>
+<li><strong>Vitest:</strong> tests.</li>
+<li><strong>Vercel:</strong> hosting.</li>
+</ul>
+</dd>
+</div>
+<div>
+<dt>Security</dt>
+<dd>
+<ul>
+<li>Row Level Security is on every table, and a client only sees projects assigned to them.</li>
+<li>A database trigger only lets a decision go through on a milestone that's actually in review.</li>
+<li>Users can't change their own role.</li>
+<li>The file bucket is private, with size and file type limits.</li>
+</ul>
+</dd>
+</div>
+<div>
+<dt>One thing I learned</dt>
+<dd>File storage rules are easier to mess up than I expected. I hit an access-denied bug in the storage policies for client uploads and had to dig for a while to find it. Then on a fresh Supabase project the same policies broke again, because one column is named differently there.</dd>
+</div>
+<div>
+<dt>Honest notes</dt>
+<dd>I built this solo. I used AI coding tools, but I read and tested what went in. The demo data is fake and nobody has audited this, so please don't put real client documents in it.</dd>
+</div>
+</dl>
+</div>
+</article>
 
 <article class="case reveal" id="nexus" aria-labelledby="nexus-title">
 <a class="case-shot" href="https://nexus-chwr.vercel.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
-<img src="images/nexus-hero.png" alt="" loading="eager">
+<img src="images/nexus-hero.png" alt="" loading="lazy">
 </a>
 <div class="case-body">
-<span class="badge">Flagship project · Web3 · Sepolia testnet</span>
-<h3 id="nexus-title">Nexus — making Web3 transactions less confusing</h3>
-<p class="lede">A wallet dashboard that shows every step of a transaction, so users don't sit there wondering if it worked or not.</p>
+<span class="badge">Web3 · Sepolia testnet</span>
+<h3 id="nexus-title">Nexus — Web3 transactions that don't leave you guessing</h3>
+<p class="lede">A wallet dashboard that shows every step of a transaction, so nobody's staring at the screen wondering if it worked.</p>
 <div class="case-actions">
 <a class="btn btn-primary" href="https://nexus-chwr.vercel.app/" target="_blank" rel="noopener noreferrer">
 View Live Demo
@@ -226,20 +301,20 @@ View Source on GitHub
 <span class="sr-only">(opens in a new tab)</span>
 </a>
 </div>
-<p class="case-note">Switch your wallet to Sepolia. No real funds needed.</p>
+<p class="case-note">Switch your wallet to Sepolia. No real money involved.</p>
 <dl class="facts">
 <div>
 <dt>Why I built it</dt>
-<dd>In Web3 apps, transactions often just... go quiet. A pending transaction looks like the app froze. A rejected signature looks like a bug. Users get confused, open a support ticket, or just leave. I wanted to see if I could fix that with clear UI states.</dd>
+<dd>In a lot of Web3 apps, transactions just go quiet. A pending one looks like the app froze. A rejected signature looks like a bug. People get confused, write to support, or leave. I wanted to see if clear UI states could fix most of that.</dd>
 </div>
 <div>
 <dt>What it does</dt>
 <dd>
 <ul>
-<li>Shows pending, confirmed, and rejected states clearly so users always know where they stand.</li>
-<li>Handles declined signatures with a clear message instead of a dead end.</li>
-<li>Listens for wallet account and network changes so the balance never goes stale.</li>
-<li>The same pattern works for checkout flows, billing, anything with async actions.</li>
+<li>Shows pending, confirmed and rejected clearly, so you always know where you stand.</li>
+<li>If you decline a signature, it tells you instead of leaving you at a dead end.</li>
+<li>Watches for account and network changes in the wallet, so the balance doesn't go stale.</li>
+<li>The same idea works for checkout, billing, anything with an async action.</li>
 </ul>
 </dd>
 </div>
@@ -247,29 +322,29 @@ View Source on GitHub
 <dt>How it's built</dt>
 <dd>
 <ul>
-<li><strong>React + TypeScript:</strong> typed UI state so broken states can't render.</li>
+<li><strong>React + TypeScript:</strong> typed UI state, so broken states can't render.</li>
 <li><strong>wagmi:</strong> wallet connection, balances, transaction status.</li>
 <li><strong>viem:</strong> the chain client underneath.</li>
-<li><strong>Tailwind + Vite:</strong> fast, responsive UI.</li>
+<li><strong>Tailwind + Vite:</strong> quick, responsive UI.</li>
 <li><strong>Multi-wallet support</strong> across different providers.</li>
-<li><strong>Deployed on Vercel.</strong></li>
+<li><strong>Vercel:</strong> hosting.</li>
 </ul>
 </dd>
 </div>
 <div>
 <dt>One thing I learned</dt>
-<dd>Wallet state can change at any moment — user switches accounts, changes networks, disconnects. Nexus listens for all of that so the UI never shows old data. Sounds simple, but it's easy to get wrong.</dd>
+<dd>Wallet state can change any second: the user switches account, changes network, disconnects. Nexus listens for all of it so the screen never shows old data. Sounds easy. It isn't.</dd>
 </div>
 <div>
 <dt>Honest notes</dt>
-<dd>I built this solo. I used AI coding tools along the way, but I read and tested everything myself. It's on the Sepolia testnet only — not audited, not built for real money. The allocation table uses sample data.</dd>
+<dd>Built solo. I used AI coding tools along the way, but I read and tested everything myself. It's Sepolia testnet only, not audited and not meant for real money. The allocation table is sample data.</dd>
 </div>
 </dl>
 </div>
 </article>
 
 <h3 class="subhead reveal">Older experiments</h3>
-<p class="reveal">Stuff I built earlier while learning — before I moved to React and TypeScript. They're rough, but they're real.</p>
+<p class="reveal">Stuff I made earlier while I was still learning, before I moved to React and TypeScript. They're rough, but they're real.</p>
 <div class="cards">
 <article class="card reveal">
 <a class="thumb" href="https://raiyo395.github.io/vantic/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
@@ -277,7 +352,7 @@ View Source on GitHub
 </a>
 <div class="card-body">
 <h4>Vantik Storefront</h4>
-<p>A dark-themed demo store with a cart that updates live and saves to localStorage.</p>
+<p>A dark demo store. The cart updates live and remembers what you added through localStorage.</p>
 <ul class="tags" aria-label="Technologies">
 <li>Tailwind CSS</li>
 <li>JavaScript ES6</li>
@@ -297,7 +372,7 @@ View live site <span class="sr-only">for Vantik Storefront (opens in a new tab)<
 </a>
 <div class="card-body">
 <h4>Lumière Skincare</h4>
-<p>A demo storefront with cart and order summary logic in plain JavaScript. No real payments.</p>
+<p>A demo store with cart and order summary logic written in plain JavaScript. No real payments.</p>
 <ul class="tags" aria-label="Technologies">
 <li>Semantic HTML</li>
 <li>CSS</li>
@@ -319,23 +394,23 @@ View live site <span class="sr-only">for Lumière Skincare (opens in a new tab)<
 <div class="wrap">
 <div class="section-head reveal">
 <h2>How we'd work together</h2>
-<p>I keep this simple. You know the price and the timeline before I start.</p>
+<p>I try to keep it simple. You know the price and the timeline before I write a line of code.</p>
 </div>
 <ol class="steps">
 <li class="reveal">
 <h3>You tell me what you need</h3>
-<p>Send me your idea, designs, or existing code. I'll look at it, figure out what's realistic, and tell you the fastest way to get something working. If you're building something Web3, I'll also point out 2-3 things in your flow you could improve — free, no strings.</p>
+<p>Send me your idea, your designs or your current code. I'll look it over, work out what's realistic, and tell you the quickest way to get something working. If it's a Web3 thing, I'll also point out two or three things in your flow I'd fix. Free, no strings.</p>
 </li>
 <li class="reveal reveal-delay-1">
-<h3>I send you a written proposal</h3>
-<p>Fixed deliverables, fixed price, fixed timeline. You see exactly what you're getting before any work starts. No hourly billing, no scope creep.</p>
+<h3>I send a written proposal</h3>
+<p>What you get, what it costs, how long it takes. All fixed, all written down before work starts. No hourly billing and no "oh, that's extra" halfway through.</p>
 </li>
 <li class="reveal reveal-delay-2">
-<h3>I build it and you test it</h3>
-<p>I build in React, TypeScript, and Tailwind on serverless infrastructure. I test on the devices we agreed on. You get to review a working product before it's handed over.</p>
+<h3>I build it, you test it</h3>
+<p>I build in React, TypeScript and Tailwind on serverless hosting. I test on the devices we agreed on, and you get to try a working version before I hand anything over.</p>
 </li>
 </ol>
-<p class="terms reveal">I usually reply within 24 hours. I get paid in USDT or USDC. We agree on the scope, price, and timeline before work starts.</p>
+<p class="terms reveal">I usually reply within 24 hours. I get paid in USDT or USDC. Scope, price and timeline get agreed before work starts.</p>
 </div>
 </section>
 
@@ -344,16 +419,17 @@ View live site <span class="sr-only">for Lumière Skincare (opens in a new tab)<
 <div class="section-head reveal">
 <h2>About me</h2>
 </div>
-<p class="reveal">I'm a frontend developer first. For databases, auth, and hosting I lean on tools like Supabase, Firebase, and Vercel, so I can skip the infrastructure work and get something in front of real users faster.</p>
-<p class="reveal">I use AI tools while I work — I'm not hiding that. But I read, test, and take responsibility for everything I ship. And you work with me directly the whole time, not a team or an agency.</p>
+<p class="reveal">I'm a frontend developer first. For databases, auth and hosting I lean on Supabase, Firebase and Vercel, so I don't burn weeks on infrastructure and can get something in front of real users faster.</p>
+<p class="reveal">Yes, I use AI tools when I work. I'm not hiding it. But I read and test everything I ship, and I'm the one responsible for it. You deal with me the whole time, not a team or an agency.</p>
 <div class="fit">
 <div class="reveal">
 <h3>I'm probably a good fit if you need&hellip;</h3>
 <ul>
-<li><strong>An MVP</strong> with auth, data, and a deployed frontend</li>
+<li><strong>A client portal</strong> or multi-user app with logins and roles</li>
+<li><strong>An MVP</strong> with auth, data and a deployed frontend</li>
 <li><strong>A React dashboard</strong> or SaaS frontend</li>
 <li><strong>A Web3 interface</strong> with wallet and transaction flows</li>
-<li><strong>A landing page</strong> or small e-commerce store</li>
+<li><strong>A landing page</strong> or small online store</li>
 <li><strong>Someone to clean up</strong> an existing React/Tailwind codebase</li>
 </ul>
 </div>
@@ -372,8 +448,8 @@ View live site <span class="sr-only">for Lumière Skincare (opens in a new tab)<
 <section class="section" id="contact">
 <div class="wrap">
 <div class="section-head reveal">
-<h2>Got something you want to build?</h2>
-<p>Send me your idea, designs, or current code. I'll reply within 24 hours and tell you honestly if I can help.</p>
+<h2>Got something you want built?</h2>
+<p>Send me your idea, designs or current code. I'll reply within 24 hours and tell you straight if I can help.</p>
 </div>
 <div class="contact-links reveal">
 <a class="btn btn-primary" href="mailto:aricraiyovext@gmail.com?subject=Project%20inquiry">Tell me about your project</a>
