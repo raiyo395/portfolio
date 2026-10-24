@@ -1,58 +1,59 @@
-# Aric Raiyo | Web3 Frontend Developer
+# Aric Raiyo | Websites, Client Portals, Dashboards & Web3 Interfaces
 
-Personal portfolio showcasing live, deployed projects across Web3 dApps and 
-e-commerce storefronts — wallet connect flows, on-chain dashboards, and DeFi 
-front ends, built with React, TypeScript, and Tailwind CSS.
+Personal portfolio showcasing live, deployed projects — client portals, dashboards, Web3 interfaces, and storefronts — built with React, TypeScript, and Tailwind CSS.
 
 🔗 **Live site:** https://raiyo395.github.io/portfolio/
 
 ## About
 
-Self-taught developer who learns by shipping — every project here is a real, 
-working build, deployed from scratch, not a tutorial clone. Started with 
-e-commerce cart and checkout logic, which is where the focus on clean state 
-and zero-confusion UX began, and carried that into wallet-connected, on-chain 
-interfaces.
+Frontend developer who ships real products. I build client portals, dashboards, Web3 interfaces, and landing pages for individuals and small teams. You work with me directly — we agree on scope, price, and timeline before any work starts.
+
+I lean on tools like Supabase, Firebase, and Vercel so I can focus on the product instead of infrastructure.
 
 ## Featured Projects
 
-### Nexus DeFi Dashboard — *Flagship, Web3*
-Connect a wallet, check live balances, send transactions — no card forms, no 
-accounts, just a wallet and a signature. Runs on Sepolia testnet, built to 
-handle real-world edge cases: pending states, rejected signatures, and 
-multiple wallet providers.
+### Client Portal — *Flagship, Full-stack*
+One place for freelancers and their clients. Admins create projects and milestones. Clients log in, track progress, approve milestones or request changes, and download files.
 
-`React` `TypeScript` `wagmi / viem` `Tailwind CSS` `Sepolia Testnet`
+Built with React, TypeScript, Tailwind, Vite, React Router, and Supabase (Auth, Postgres, Storage, Row Level Security). Includes role-based access, decision history, and private file storage.
 
-### Vantik Storefront — *Foundation Build*
-A dark-themed e-commerce store with real-time cart state and no page reloads — 
-the project where the state-management habits behind Nexus's wallet/balance 
-UI were built.
+**Live demo:** https://client-portal-seven-indol.vercel.app/  
+**Source:** https://github.com/raiyo395/client-portal
 
-`Tailwind CSS` `JavaScript ES6` `localStorage`
+### Nexus — *Web3*
+A wallet dashboard that shows every step of a transaction (pending, confirmed, rejected) so users never have to guess what happened. Runs on Sepolia testnet.
 
-### Lumière Skincare — *Foundation Build*
-First full storefront build — cart and payment summary logic tested end to 
-end, before any of it touched a wallet or a chain.
+Built with React, TypeScript, wagmi, viem, Tailwind, and Vite. Handles account/network changes and multiple wallet providers.
 
-`Semantic HTML5` `CSS Architecture` `Vanilla JavaScript`
+**Live demo:** https://nexus-chwr.vercel.app/  
+**Source:** https://github.com/raiyo395/nexus
+
+### Older Experiments
+- **Vantik Storefront** — Dark-themed demo store with live cart and localStorage  
+- **Lumière Skincare** — Early storefront with cart and order summary logic in plain JavaScript
 
 ## Tech Stack
 
-React · TypeScript · wagmi / viem · Tailwind CSS · JavaScript (ES6)
+React · TypeScript · Tailwind · Vite · wagmi · viem · Supabase (Auth, Postgres, RLS) · Firebase · Vercel
 
 ## Available For
 
-Independent frontend contracts for Web3 products — wallet connection flows, 
-on-chain dashboards, DeFi front ends. Offering a free 10-minute Web3 UX audit 
-for anyone with an existing wallet or on-chain flow.
+- Client portals and multi-user apps
+- MVPs with real auth and database
+- React dashboards and SaaS frontends
+- Web3 interfaces and wallet flows
+- Landing pages and small storefronts
+- Cleaning up existing React/Tailwind codebases
+
+Offering a free Web3 flow review for anyone with an existing wallet or on-chain interface.
 
 ## Contact
 
 📧 [aricraiyovext@gmail.com](mailto:aricraiyovext@gmail.com)  
 💬 Telegram: [@AricRaiyo](https://t.me/AricRaiyo)  
-🐦 X: [@raiyodev39cs](https://x.com/raiyodev39cs)  
+🐦 X: [@aricraiyo395](https://x.com/aricraiyo395)  
 💻 GitHub: [@raiyo395](https://github.com/raiyo395)
 
 ---
-© 2026 Aric Raiyo. All rights reserved.
+
+© 2026 Aric Raiyo
