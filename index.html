@@ -42,7 +42,6 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 .section-head{display:grid;gap:.5rem;margin-bottom:2rem}
 .section-head h2{font-size:1.75rem}
 .section-head p{color:var(--muted);max-width:60ch}
-
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:44px;padding:.65rem 1.1rem;border:1px solid transparent;border-radius:var(--radius-control);font:600 .9rem/1.2 var(--font);text-decoration:none;text-align:center;cursor:pointer;transition:background-color .2s ease,border-color .2s ease,color .2s ease,transform .2s ease,box-shadow .2s ease}
 .btn-primary{background:var(--accent);color:var(--bg)}
 .btn-primary:hover{background:var(--accent-hover);color:var(--bg);transform:translateY(-1px);box-shadow:0 6px 20px rgba(167,139,250,.25)}
@@ -50,7 +49,6 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 .btn-secondary:hover{background:var(--surface);color:#fff;border-color:var(--muted);transform:translateY(-1px)}
 .btn:active{transform:translateY(0)}
 .btn svg{width:1rem;height:1rem;flex:none}
-
 .site-header{position:sticky;top:0;z-index:50;background:rgba(11,15,25,.85);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .site-header .wrap{height:4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{color:#fff;font-weight:800;font-size:1.15rem;letter-spacing:-.02em;text-decoration:none}
@@ -61,7 +59,6 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 .nav-links a:hover{color:#fff}
 @media (min-width:640px){.nav-links{display:flex}}
 .site-header .btn{min-height:40px;padding:.5rem .9rem;font-size:.85rem}
-
 .hero{padding-block:3.5rem 4rem}
 @media (min-width:768px){.hero{padding-block:5.5rem 5rem}}
 .status{display:inline-flex;align-items:center;gap:.5rem;font-size:.875rem;font-weight:600;color:var(--ok);margin-bottom:1.25rem}
@@ -72,13 +69,11 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 .hero-actions{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.75rem}
 .hero-tools{margin-top:2.5rem;max-width:62ch;font-size:.9rem;color:var(--muted)}
 .hero-tools strong{color:var(--text);font-weight:600}
-
 .build{list-style:none;display:grid;gap:.75rem}
 @media (min-width:768px){.build{grid-template-columns:1fr 1fr}}
 .build li{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);padding:1rem 1.25rem}
 .build li strong{display:block;color:#fff;font-weight:700;margin-bottom:.25rem}
 .build li span{color:var(--muted);font-size:.95rem}
-
 /* --- Project / case study --- */
 .case{background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius-card);overflow:hidden;transition:border-color .3s ease,box-shadow .3s ease}
 .case+.case{margin-top:2rem}
@@ -100,18 +95,16 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 .facts dd{margin:0;max-width:62ch}
 .facts ul{padding-left:1.1rem;display:grid;gap:.3rem}
 @media (min-width:768px){.facts>div{display:grid;grid-template-columns:9.5rem 1fr;gap:1.5rem}.facts dt{margin-bottom:0;padding-top:.1rem}}
-
-/* --- Small secondary project --- */
+/* --- Small Nexus card --- */
 .mini{display:grid;margin-top:2rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);overflow:hidden;transition:border-color .3s ease}
 .mini:hover{border-color:rgba(167,139,250,.3)}
 .mini-shot{display:block;background:var(--surface-2);overflow:hidden}
 .mini-shot img{width:100%;height:9rem;object-fit:cover;object-position:top}
 .mini-body{padding:1.25rem 1.5rem;display:grid;gap:.7rem;align-content:center}
 .mini h3{font-size:1.1rem}
-.mini p{color:var(--muted);font-size:.95rem;max-width:58ch}
-.mini .case-note{font-size:.85rem}
+.mini .lede{color:var(--muted);font-size:.95rem;max-width:58ch}
 .mini .btn{min-height:40px;padding:.5rem .9rem;font-size:.85rem}
-@media (min-width:768px){.mini{grid-template-columns:13rem 1fr}.mini-shot{height:100%}.mini-shot img{height:100%;min-height:11rem}}
+@media (min-width:768px){.mini{grid-template-columns:13rem 1fr}.mini-shot{height:100%}.mini-shot img{height:100%;min-height:10rem}}
 
 /* --- Cards --- */
 .subhead{font-size:1.15rem;margin:3rem 0 .4rem}
@@ -129,7 +122,6 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 .tags{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;padding:0}
 .tags li{font-family:var(--mono);font-size:.75rem;color:var(--text);background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius-tag);padding:.15rem .5rem}
 .card-foot{padding:0 1.5rem 1.5rem}.card-foot .btn{width:100%}
-
 /* --- Process --- */
 .steps{list-style:none;counter-reset:step;display:grid;gap:1rem}
 @media (min-width:768px){.steps{grid-template-columns:repeat(3,1fr)}}
@@ -139,7 +131,6 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 .steps h3{font-size:1.05rem;margin-bottom:.5rem}
 .steps p{color:var(--muted);font-size:.95rem}
 .terms{margin-top:1.5rem;color:var(--muted);font-size:.95rem;max-width:62ch}
-
 /* --- About --- */
 .about p{max-width:62ch;color:var(--muted)}
 .about p+p{margin-top:1rem}
@@ -148,12 +139,10 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 .fit h3{font-size:1.05rem;margin-bottom:.75rem}
 .fit ul{padding-left:1.1rem;display:grid;gap:.4rem;color:var(--muted)}
 .fit strong{color:var(--text);font-weight:600}
-
 /* --- Contact --- */
 .contact-links{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}
 .contact-mail{margin-top:1.25rem;color:var(--muted)}
 .site-footer{border-top:1px solid var(--line);padding-block:2rem;color:var(--muted);font-size:.875rem}
-
 /* --- Reveal animations --- */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
@@ -163,7 +152,6 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-
 <header class="site-header">
 <div class="wrap">
 <a class="brand" href="#top" aria-label="Aric Raiyo, back to top">Aric Raiyo<span>.dev</span></a>
@@ -177,9 +165,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 </nav>
 </div>
 </header>
-
 <main id="main">
-
 <section class="hero" id="top">
 <div class="wrap">
 <p class="status reveal"><span class="dot" aria-hidden="true"></span>Open for new projects</p>
@@ -196,7 +182,6 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 </p>
 </div>
 </section>
-
 <section class="section" id="build">
 <div class="wrap">
 <div class="section-head reveal">
@@ -213,14 +198,12 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 </ul>
 </div>
 </section>
-
 <section class="section" id="work">
 <div class="wrap">
 <div class="section-head reveal">
 <h2>Things I've built</h2>
-<p>The Client Portal is my main project right now, and Nexus is the Web3 one. Both are live, so go click around.</p>
+<p>The Client Portal is my main project right now, and Nexus is the Web3 one. Both are live if you want to try them.</p>
 </div>
-
 <article class="case reveal" id="client-portal" aria-labelledby="client-portal-title">
 <a class="case-shot" href="https://client-portal-seven-indol.vercel.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
 <img src="images/portal-hero.png" alt="" loading="eager">
@@ -292,7 +275,6 @@ View Source on GitHub
 </dl>
 </div>
 </article>
-
 <article class="mini reveal" id="nexus" aria-labelledby="nexus-title">
 <a class="mini-shot" href="https://nexus-chwr.vercel.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
 <img src="images/nexus-hero.png" alt="" loading="lazy">
@@ -300,15 +282,14 @@ View Source on GitHub
 <div class="mini-body">
 <span class="badge">Web3 · Sepolia testnet</span>
 <h3 id="nexus-title">Nexus — Web3 transactions that don't leave you guessing</h3>
-<p>A wallet dashboard (React, TypeScript, wagmi, viem) that shows every step of a transaction, so nobody's staring at the screen wondering if it worked. Testnet only, not audited, and the allocation table is sample data.</p>
+<p class="lede">A wallet dashboard that shows every step of a transaction, so nobody's staring at the screen wondering if it worked.</p>
 <div class="case-actions">
 <a class="btn btn-secondary" href="https://nexus-chwr.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo<span class="sr-only"> for Nexus (opens in a new tab)</span></a>
 <a class="btn btn-secondary" href="https://github.com/raiyo395/nexus" target="_blank" rel="noopener noreferrer">Source<span class="sr-only"> for Nexus on GitHub (opens in a new tab)</span></a>
 </div>
-<p class="case-note">Switch your wallet to Sepolia to try it. No real money involved.</p>
+<p class="case-note">Switch your wallet to Sepolia. No real money involved.</p>
 </div>
 </article>
-
 <h3 class="subhead reveal">Older experiments</h3>
 <p class="reveal">Stuff I made earlier while I was still learning, before I moved to React and TypeScript. They're rough, but they're real.</p>
 <div class="cards">
@@ -355,7 +336,6 @@ View live site <span class="sr-only">for Lumière Skincare (opens in a new tab)<
 </div>
 </div>
 </section>
-
 <section class="section" id="process">
 <div class="wrap">
 <div class="section-head reveal">
@@ -379,7 +359,6 @@ View live site <span class="sr-only">for Lumière Skincare (opens in a new tab)<
 <p class="terms reveal">I usually reply within 24 hours. I get paid in USDT or USDC. Scope, price and timeline get agreed before work starts.</p>
 </div>
 </section>
-
 <section class="section about" id="about">
 <div class="wrap">
 <div class="section-head reveal">
@@ -410,7 +389,6 @@ View live site <span class="sr-only">for Lumière Skincare (opens in a new tab)<
 </div>
 </div>
 </section>
-
 <section class="section" id="contact">
 <div class="wrap">
 <div class="section-head reveal">
@@ -427,15 +405,12 @@ View live site <span class="sr-only">for Lumière Skincare (opens in a new tab)<
 <p class="contact-mail reveal">Email: <a href="mailto:aricraiyovext@gmail.com">aricraiyovext@gmail.com</a></p>
 </div>
 </section>
-
 </main>
-
 <footer class="site-footer">
 <div class="wrap">
 <p>&copy; 2026 Aric Raiyo</p>
 </div>
 </footer>
-
 <script>
 const reveals = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window) {
