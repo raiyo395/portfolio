@@ -101,6 +101,18 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 .facts ul{padding-left:1.1rem;display:grid;gap:.3rem}
 @media (min-width:768px){.facts>div{display:grid;grid-template-columns:9.5rem 1fr;gap:1.5rem}.facts dt{margin-bottom:0;padding-top:.1rem}}
 
+/* --- Small secondary project --- */
+.mini{display:grid;margin-top:2rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);overflow:hidden;transition:border-color .3s ease}
+.mini:hover{border-color:rgba(167,139,250,.3)}
+.mini-shot{display:block;background:var(--surface-2);overflow:hidden}
+.mini-shot img{width:100%;height:9rem;object-fit:cover;object-position:top}
+.mini-body{padding:1.25rem 1.5rem;display:grid;gap:.7rem;align-content:center}
+.mini h3{font-size:1.1rem}
+.mini p{color:var(--muted);font-size:.95rem;max-width:58ch}
+.mini .case-note{font-size:.85rem}
+.mini .btn{min-height:40px;padding:.5rem .9rem;font-size:.85rem}
+@media (min-width:768px){.mini{grid-template-columns:13rem 1fr}.mini-shot{height:100%}.mini-shot img{height:100%;min-height:11rem}}
+
 /* --- Cards --- */
 .subhead{font-size:1.15rem;margin:3rem 0 .4rem}
 .subhead+p{color:var(--muted);margin-bottom:1.5rem;max-width:60ch}
@@ -146,7 +158,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offse
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}.reveal-delay-3{transition-delay:.3s}
-@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.status .dot{animation:none}.btn,.card,.case,.steps li{transition:none}.case:hover .case-shot img,.card:hover .thumb img{transform:none}}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.status .dot{animation:none}.btn,.card,.mini,.case,.steps li{transition:none}.case:hover .case-shot img,.card:hover .thumb img{transform:none}}
 </style>
 </head>
 <body>
@@ -281,65 +293,19 @@ View Source on GitHub
 </div>
 </article>
 
-<article class="case reveal" id="nexus" aria-labelledby="nexus-title">
-<a class="case-shot" href="https://nexus-chwr.vercel.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+<article class="mini reveal" id="nexus" aria-labelledby="nexus-title">
+<a class="mini-shot" href="https://nexus-chwr.vercel.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
 <img src="images/nexus-hero.png" alt="" loading="lazy">
 </a>
-<div class="case-body">
+<div class="mini-body">
 <span class="badge">Web3 · Sepolia testnet</span>
 <h3 id="nexus-title">Nexus — Web3 transactions that don't leave you guessing</h3>
-<p class="lede">A wallet dashboard that shows every step of a transaction, so nobody's staring at the screen wondering if it worked.</p>
+<p>A wallet dashboard (React, TypeScript, wagmi, viem) that shows every step of a transaction, so nobody's staring at the screen wondering if it worked. Testnet only, not audited, and the allocation table is sample data.</p>
 <div class="case-actions">
-<a class="btn btn-primary" href="https://nexus-chwr.vercel.app/" target="_blank" rel="noopener noreferrer">
-View Live Demo
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-<span class="sr-only">(opens in a new tab)</span>
-</a>
-<a class="btn btn-secondary" href="https://github.com/raiyo395/nexus" target="_blank" rel="noopener noreferrer">
-View Source on GitHub
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-<span class="sr-only">(opens in a new tab)</span>
-</a>
+<a class="btn btn-secondary" href="https://nexus-chwr.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo<span class="sr-only"> for Nexus (opens in a new tab)</span></a>
+<a class="btn btn-secondary" href="https://github.com/raiyo395/nexus" target="_blank" rel="noopener noreferrer">Source<span class="sr-only"> for Nexus on GitHub (opens in a new tab)</span></a>
 </div>
-<p class="case-note">Switch your wallet to Sepolia. No real money involved.</p>
-<dl class="facts">
-<div>
-<dt>Why I built it</dt>
-<dd>In a lot of Web3 apps, transactions just go quiet. A pending one looks like the app froze. A rejected signature looks like a bug. People get confused, write to support, or leave. I wanted to see if clear UI states could fix most of that.</dd>
-</div>
-<div>
-<dt>What it does</dt>
-<dd>
-<ul>
-<li>Shows pending, confirmed and rejected clearly, so you always know where you stand.</li>
-<li>If you decline a signature, it tells you instead of leaving you at a dead end.</li>
-<li>Watches for account and network changes in the wallet, so the balance doesn't go stale.</li>
-<li>The same idea works for checkout, billing, anything with an async action.</li>
-</ul>
-</dd>
-</div>
-<div>
-<dt>How it's built</dt>
-<dd>
-<ul>
-<li><strong>React + TypeScript:</strong> typed UI state, so broken states can't render.</li>
-<li><strong>wagmi:</strong> wallet connection, balances, transaction status.</li>
-<li><strong>viem:</strong> the chain client underneath.</li>
-<li><strong>Tailwind + Vite:</strong> quick, responsive UI.</li>
-<li><strong>Multi-wallet support</strong> across different providers.</li>
-<li><strong>Vercel:</strong> hosting.</li>
-</ul>
-</dd>
-</div>
-<div>
-<dt>One thing I learned</dt>
-<dd>Wallet state can change any second: the user switches account, changes network, disconnects. Nexus listens for all of it so the screen never shows old data. Sounds easy. It isn't.</dd>
-</div>
-<div>
-<dt>Honest notes</dt>
-<dd>Built solo. I used AI coding tools along the way, but I read and tested everything myself. It's Sepolia testnet only, not audited and not meant for real money. The allocation table is sample data.</dd>
-</div>
-</dl>
+<p class="case-note">Switch your wallet to Sepolia to try it. No real money involved.</p>
 </div>
 </article>
 
